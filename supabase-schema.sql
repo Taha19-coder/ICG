@@ -227,7 +227,7 @@ CREATE TRIGGER update_site_config_updated_at BEFORE UPDATE ON site_config
 -- Insert default site configuration
 INSERT INTO site_config (key, value, description) VALUES
 ('company_name', '"ICG — Investment and Construction Group"', 'Company name displayed on website'),
-('company_tagline', '"Building Spaces. Creating Value"', 'Company tagline'),
+('company_tagline', '"Building Spaces Creating Value"', 'Company tagline'),
 ('phone', '"+92 42 111 424 424"', 'Business phone number'),
 ('whatsapp', '"+92 300 1234567"', 'WhatsApp business number'),
 ('email', '"info@icg.com.pk"', 'Business email address'),

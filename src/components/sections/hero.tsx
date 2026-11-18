@@ -40,7 +40,7 @@ export function HeroSection() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="inline-flex items-center gap-2 text-deep-black text-sm font-semibold uppercase tracking-[0.2em] mb-8"
+            className="inline-flex items-center gap-2 text-pure-white text-sm font-semibold uppercase tracking-[0.2em] mb-8"
           >
             <span className="w-1 h-1 bg-gold-accent rounded-full" />
             <span>Investment & Construction Group</span>
