@@ -1,8 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Link from 'next/link';
-import { ArrowRight, Mail } from 'lucide-react';
 import { useSiteSettings } from '@/hooks/use-site-settings';
 
 const heroImages = [
@@ -28,7 +26,7 @@ export function HeroSection() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-deep-black/85 via-deep-black/45 to-transparent" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_0%,_rgba(10,11,13,0.7)_100%)]" />
-        <div className="absolute inset-0 bg-[conic-gradient(from_180deg_at_50%_50%,transparent_0%,rgba(197,160,89,0.15)_25%,transparent_50%,rgba(197,160,89,0.15)_75%,transparent_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_0%,_rgba(10,11,13,0.8)_100%)]" />
       </div>
 
       <div className="relative z-10 container-custom py-24 px-4">
@@ -67,27 +65,6 @@ export function HeroSection() {
             Discover exceptional properties and development opportunities with Investment and Construction Group.
           </motion.p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-12"
-          >
-            <Link
-              href="/properties"
-              className="btn-primary flex items-center gap-2"
-            >
-              Explore Properties
-              <ArrowRight className="w-5 h-5" aria-hidden="true" />
-            </Link>
-            <Link
-              href="/contact"
-              className="btn-secondary flex items-center gap-2"
-            >
-              Contact Us
-              <Mail className="w-5 h-5" aria-hidden="true" />
-            </Link>
-          </motion.div>
         </motion.div>
       </div>
     </section>
