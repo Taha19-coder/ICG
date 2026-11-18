@@ -41,9 +41,11 @@ export function OurApproach() {
           transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
           className="text-center max-w-3xl mx-auto mb-16 md:mb-20"
         >
-          <h2 id="approach-heading" className="section-heading mb-6">
-            Our Approach
-          </h2>
+          <div className="section-divider">
+            <h2 id="approach-heading" className="section-heading mb-6">
+              Our Approach
+            </h2>
+          </div>
           <p className="section-subheading mx-auto">
             A refined four-step methodology ensuring clarity, confidence, and exceptional outcomes for every client.
           </p>

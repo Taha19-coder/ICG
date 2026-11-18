@@ -22,9 +22,11 @@ export function OngoingProjects() {
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
           >
-            <h2 id="projects-heading" className="section-heading mb-4">
-              Ongoing Construction Projects
-            </h2>
+            <div className="section-divider">
+              <h2 id="projects-heading" className="section-heading mb-4">
+                Ongoing Construction Projects
+              </h2>
+            </div>
             <p className="section-subheading">
               Witness the progress of our landmark developments shaping Lahore&apos;s skyline.
             </p>

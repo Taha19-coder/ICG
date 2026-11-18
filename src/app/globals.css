@@ -1,12 +1,13 @@
 @import "tailwindcss";
 
 @theme {
-  --color-deep-black: #0E0F11;
-  --color-charcoal: #292B2E;
-  --color-medium-grey: #6E7378;
-  --color-light-grey: #DCDDDE;
-  --color-off-white: #F2F2F0;
+  --color-deep-black: #0A0B0D;
+  --color-charcoal: #1C1E21;
+  --color-medium-grey: #8A8F98;
+  --color-light-grey: #E8E9EC;
+  --color-off-white: #F7F7F5;
   --color-pure-white: #FFFFFF;
+  --color-gold-accent: #C5A059;
 
   --font-sans: 'Manrope', 'Inter', system-ui, sans-serif;
   --font-heading: 'Manrope', 'Inter', system-ui, sans-serif;
@@ -72,6 +73,10 @@
     @apply inline-flex items-center justify-center px-8 py-3.5 text-sm font-semibold text-deep-black bg-transparent border-2 border-deep-black rounded-none transition-all duration-300 hover:bg-deep-black hover:text-pure-white focus:outline-none focus:ring-2 focus:ring-deep-black focus:ring-offset-2;
   }
 
+  .btn-gold {
+    @apply inline-flex items-center justify-center px-8 py-3.5 text-sm font-semibold text-deep-black bg-gold-accent rounded-none transition-all duration-300 hover:bg-deep-black hover:text-pure-white hover:shadow-lg hover:shadow-gold-accent/20 focus:outline-none focus:ring-2 focus:ring-gold-accent focus:ring-offset-2;
+  }
+
   .btn-whatsapp {
     @apply inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold text-pure-white bg-[#25D366] rounded-none transition-all duration-300 hover:bg-[#128C7E] hover:shadow-lg hover:shadow-[#25D366]/30 focus:outline-none focus:ring-2 focus:ring-[#25D366] focus:ring-offset-2;
   }
@@ -85,15 +90,25 @@
   }
 
   .card {
-    @apply bg-pure-white border border-light-grey overflow-hidden transition-all duration-300 rounded-xl hover:border-medium-grey hover:shadow-xl hover:-translate-y-1 hover:shadow-deep-black/10;
+    @apply bg-pure-white border border-light-grey/50 overflow-hidden transition-all duration-500 rounded-xl hover:border-gold-accent/40 hover:shadow-2xl hover:-translate-y-2 hover:shadow-gold-accent/5;
   }
 
   .section-heading {
     @apply text-3xl md:text-4xl lg:text-5xl font-heading font-light tracking-tight text-deep-black;
   }
 
+  .section-divider {
+    @apply relative mb-16;
+  }
+
+  .section-divider::after {
+    @apply absolute left-1/2 -top-1 h-px w-12 bg-gold-accent;
+    content: '';
+    transform: translateX(-50%);
+  }
+
   .section-subheading {
-    @apply text-lg md:text-xl text-medium-grey font-normal max-w-2xl;
+    @apply text-lg md:text-xl text-medium-grey font-normal max-w-2xl tracking-wider;
   }
 
   .page-transition {
@@ -201,7 +216,7 @@
 
   html.dark .btn-primary {
     background-color: #F5F5F5;
-    color: #0E0F11;
+    color: #0A0B0D;
   }
 
   html.dark .btn-primary:hover {
@@ -215,7 +230,26 @@
 
   html.dark .btn-secondary:hover {
     background-color: #F5F5F5;
-    color: #0E0F11;
+    color: #0A0B0D;
+  }
+
+  html.dark .btn-gold {
+    background-color: #C5A059;
+    color: #0A0B0D;
+  }
+
+  html.dark .btn-gold:hover {
+    background-color: #0A0B0D;
+    color: #F5F5F5;
+  }
+
+  html.dark .card {
+    background-color: #141618;
+    border-color: #34383D;
+  }
+
+  html.dark .card:hover {
+    border-color: #C5A059/40;
   }
 
   html.dark .input-field:focus {

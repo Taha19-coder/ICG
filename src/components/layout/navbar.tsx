@@ -111,7 +111,7 @@ export function Navbar() {
                   {pathname === item.href && (
                     <motion.div
                       layoutId="underline"
-                      className="absolute bottom-0 left-0 right-0 h-px bg-pure-white"
+                      className="absolute bottom-0 left-0 right-0 h-[2px] bg-gold-accent"
                       transition={{ type: 'spring', stiffness: 500, damping: 30 }}
                     />
                   )}

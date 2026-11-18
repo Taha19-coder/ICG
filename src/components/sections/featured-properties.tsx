@@ -38,9 +38,11 @@ export function FeaturedProperties() {
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
           >
-            <h2 id="featured-heading" className="section-heading mb-4">
-              Featured Properties
-            </h2>
+            <div className="section-divider">
+              <h2 id="featured-heading" className="section-heading mb-4">
+                Featured Properties
+              </h2>
+            </div>
             <p className="section-subheading">
               Handpicked premium listings showcasing the finest properties in our portfolio.
             </p>

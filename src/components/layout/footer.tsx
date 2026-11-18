@@ -33,19 +33,21 @@ export function Footer() {
                 <a
                   key={label}
                   href={href}
-                  className="w-10 h-10 flex items-center justify-center border border-light-grey/30 hover:border-pure-white hover:bg-pure-white/5 transition-all duration-300"
+                  className="w-10 h-10 flex items-center justify-center border border-light-grey/30 hover:border-gold-accent hover:bg-gold-accent/10 transition-all duration-300"
                   aria-label={label}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Icon className="w-5 h-5 text-light-grey hover:text-pure-white transition-colors" />
+                  <Icon className="w-5 h-5 text-light-grey hover:text-gold-accent transition-colors" />
                 </a>
               ))}
             </div>
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-widest text-light-grey mb-5">Contact</h3>
+            <h3 className="text-sm font-semibold uppercase tracking-widest text-light-grey mb-5">
+            Contact
+          </h3>
             <ul className="space-y-4 text-light-grey" role="list">
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 mt-0.5 flex-shrink-0" aria-hidden="true" />

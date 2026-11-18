@@ -18,9 +18,11 @@ export function ContactCTA() {
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
           >
-            <h2 id="contact-heading" className="section-heading mb-6">
-              Ready to Begin Your Journey?
-            </h2>
+            <div className="section-divider">
+              <h2 id="contact-heading" className="section-heading mb-6">
+                Ready to Begin Your Journey?
+              </h2>
+            </div>
             <p className="section-subheading mb-10">
               Whether you're looking for your dream home, an investment property, or a development partner,
               our team is here to guide you every step of the way.

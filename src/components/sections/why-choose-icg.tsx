@@ -57,9 +57,11 @@ export function WhyChooseICG() {
           transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
           className="text-center max-w-3xl mx-auto mb-16 md:mb-20"
         >
-          <h2 id="why-heading" className="section-heading mb-6">
-            Why Choose ICG?
-          </h2>
+          <div className="section-divider">
+            <h2 id="why-heading" className="section-heading mb-6">
+              Why Choose ICG?
+            </h2>
+          </div>
           <p className="section-subheading mx-auto">
             We combine architectural excellence, market expertise, and unwavering commitment to deliver
             exceptional value for every client.

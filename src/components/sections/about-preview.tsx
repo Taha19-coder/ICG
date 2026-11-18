@@ -31,7 +31,8 @@ export function AboutPreview() {
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
           >
-            <span className="inline-block px-4 py-1.5 text-xs font-medium uppercase tracking-widest bg-pure-white/10 border border-pure-white/20 mb-6">
+            <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-gold-accent mb-8">
+              <span className="w-1 h-1 bg-gold-accent rounded-full" />
               About ICG
             </span>
             <h2 id="about-preview-heading" className="text-4xl md:text-5xl lg:text-6xl font-heading font-light tracking-tight mb-8">

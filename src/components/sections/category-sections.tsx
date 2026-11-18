@@ -36,9 +36,11 @@ export function CategorySections() {
           transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
           className="text-center max-w-3xl mx-auto mb-16 md:mb-20"
         >
-          <h2 id="categories-heading" className="section-heading mb-6">
-            What Are You Looking For?
-          </h2>
+          <div className="section-divider">
+            <h2 id="categories-heading" className="section-heading mb-6">
+              What Are You Looking For?
+            </h2>
+          </div>
           <p className="section-subheading mx-auto">
             Choose your path — whether you're seeking a landmark development project or your dream property.
           </p>
