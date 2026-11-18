@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from 'next';
+import Script from 'next/script';
 import { Manrope } from 'next/font/google';
 import './globals.css';
 import { Providers } from '@/components/providers';
@@ -13,6 +14,7 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('http://127.0.0.1:3000'),
   title: {
     default: 'ICG — Investment and Construction Group | Premium Real Estate & Development Lahore',
     template: '%s | ICG',
@@ -73,8 +75,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${manrope.variable} font-sans`}>
+    <html lang="en" data-scroll-behavior="smooth" className={`${manrope.variable} font-sans`} suppressHydrationWarning>
       <head>
+        <Script id="icg-theme-init" strategy="beforeInteractive">
+          {`try { if (localStorage.getItem('icg-theme') === 'dark') document.documentElement.classList.add('dark'); } catch (error) { console.error('Unable to read the saved theme preference.', error); }`}
+        </Script>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>

@@ -102,8 +102,144 @@
 }
 
 @layer utilities {
+  html.dark {
+    color-scheme: dark;
+    background-color: #0E0F11;
+  }
+
+  html.dark body {
+    background-color: #0E0F11;
+    color: #F5F5F5;
+  }
+
+  html.dark .bg-pure-white,
+  html.dark .bg-white {
+    background-color: #141618;
+  }
+
+  html.dark .bg-pure-white\/90 {
+    background-color: rgb(20 22 24 / 90%);
+  }
+
+  html.dark .bg-off-white {
+    background-color: #1B1D20;
+  }
+
+  html.dark .bg-light-grey {
+    background-color: #30343A;
+  }
+
+  html.dark .bg-charcoal {
+    background-color: #24272B;
+  }
+
+  html.dark .hover\:bg-off-white:hover,
+  html.dark .hover\:bg-pure-white:hover,
+  html.dark .hover\:bg-white:hover {
+    background-color: #24272B;
+  }
+
+  html.dark .hover\:bg-light-grey:hover {
+    background-color: #30343A;
+  }
+
+  html.dark .text-deep-black,
+  html.dark .text-black {
+    color: #F5F5F5;
+  }
+
+  html.dark .hover\:text-deep-black:hover {
+    color: #F5F5F5;
+  }
+
+  html.dark .text-charcoal {
+    color: #D1D5DB;
+  }
+
+  html.dark .text-medium-grey {
+    color: #A3A8AE;
+  }
+
+  html.dark .border-light-grey {
+    border-color: #34383D;
+  }
+
+  html.dark .border-charcoal {
+    border-color: #41454A;
+  }
+
+  html.dark .border-deep-black {
+    border-color: #D1D5DB;
+  }
+
+  html.dark .card {
+    background-color: #141618;
+    border-color: #34383D;
+  }
+
+  html.dark .section-heading {
+    color: #F5F5F5;
+  }
+
+  html.dark .section-subheading {
+    color: #A3A8AE;
+  }
+
+  html.dark .label-field {
+    color: #D1D5DB;
+  }
+
+  html.dark .input-field {
+    background-color: #141618;
+    border-color: #34383D;
+    color: #F5F5F5;
+  }
+
+  html.dark .input-field::placeholder {
+    color: #A3A8AE;
+  }
+
+  html.dark .btn-primary {
+    background-color: #F5F5F5;
+    color: #0E0F11;
+  }
+
+  html.dark .btn-primary:hover {
+    background-color: #D1D5DB;
+  }
+
+  html.dark .btn-secondary {
+    border-color: #D1D5DB;
+    color: #F5F5F5;
+  }
+
+  html.dark .btn-secondary:hover {
+    background-color: #F5F5F5;
+    color: #0E0F11;
+  }
+
+  html.dark .input-field:focus {
+    border-color: #D1D5DB;
+    box-shadow: 0 0 0 1px #D1D5DB;
+  }
+
+  html.dark .theme-icon-dark {
+    display: none;
+  }
+
+  html.dark .theme-icon-light {
+    display: block;
+  }
+
   .text-balance {
     text-wrap: balance;
+  }
+
+  .select-arrow {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236E7378' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='m6 9 6 6 6-6'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 40px;
   }
 
   .animate-delay-100 {
