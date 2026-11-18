@@ -27,7 +27,7 @@ export function ContactCTA() {
             </p>
 
             <div className="space-y-6 mb-10">
-              <div className="flex items-start gap-4 p-6 bg-pure-white border border-light-grey">
+              <div className="card flex items-start gap-4 p-6">
                 <div className="w-12 h-12 flex items-center justify-center bg-deep-black/5 border border-light-grey flex-shrink-0">
                   <Phone className="w-6 h-6 text-deep-black" aria-hidden="true" />
                 </div>
@@ -39,7 +39,7 @@ export function ContactCTA() {
                 </div>
               </div>
 
-              <div className="flex items-start gap-4 p-6 bg-pure-white border border-light-grey">
+              <div className="card flex items-start gap-4 p-6">
                 <div className="w-12 h-12 flex items-center justify-center bg-deep-black/5 border border-light-grey flex-shrink-0">
                   <Mail className="w-6 h-6 text-deep-black" aria-hidden="true" />
                 </div>
@@ -51,7 +51,7 @@ export function ContactCTA() {
                 </div>
               </div>
 
-              <div className="flex items-start gap-4 p-6 bg-pure-white border border-light-grey">
+              <div className="card flex items-start gap-4 p-6">
                 <div className="w-12 h-12 flex items-center justify-center bg-deep-black/5 border border-light-grey flex-shrink-0">
                   <MapPin className="w-6 h-6 text-deep-black" aria-hidden="true" />
                 </div>

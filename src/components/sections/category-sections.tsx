@@ -52,7 +52,7 @@ export function CategorySections() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-100px' }}
               transition={{ duration: 0.7, delay: index * 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
-              className="relative group overflow-hidden"
+              className="card group overflow-hidden"
             >
               <Link
                 href={category.href}

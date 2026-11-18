@@ -165,7 +165,7 @@ function ContactContent() {
               </div>
             </div>
 
-            <div className="bg-pure-white border border-light-grey p-6 md:p-8">
+            <div className="card p-6 md:p-8">
               <h2 className="text-2xl md:text-3xl font-heading font-light tracking-tight text-deep-black mb-6">
                 Send Us a Message
               </h2>
