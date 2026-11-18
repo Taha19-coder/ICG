@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Globe2, Camera, Briefcase, MessageCircle, MapPin, Phone, Mail, Send } from 'lucide-react';
 import { useSiteSettings } from '@/hooks/use-site-settings';
 
@@ -13,6 +14,9 @@ const socialLinks = [
 
 export function Footer() {
   const siteConfig = useSiteSettings();
+  const pathname = usePathname();
+
+  if (pathname.startsWith('/admin')) return null;
 
   return (
     <footer className="bg-deep-black text-pure-white" role="contentinfo">
