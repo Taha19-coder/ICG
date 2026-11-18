@@ -4,9 +4,8 @@ import { useEffect, useState } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Building2, Home, Settings, LogOut, Menu, X, Building, Mail, LayoutDashboard, Globe2, Camera, Briefcase, MessageCircle, MapPin, Phone, Send } from 'lucide-react';
+import { Building2, Home, Settings, LogOut, Menu, X, Building, Mail, LayoutDashboard } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { useSiteSettings } from '@/hooks/use-site-settings';
 
 const adminNavItems = [
   { href: '/admin/dashboard', label: 'Dashboard', icon: LayoutDashboard },
@@ -88,7 +87,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   const user = adminUser;
 
   return (
-    <div className="min-h-screen bg-off-white flex flex-col">
+    <div className="min-h-screen bg-off-white">
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
@@ -235,7 +234,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           </div>
         </header>
 
-        <main className="flex-1 p-6 lg:p-8" role="main">
+        <main className="p-6 lg:p-8" role="main">
           {authError && <p className="mb-6 border border-red-200 bg-red-50 p-3 text-sm text-red-800" role="alert">{authError}</p>}
           {children}
         </main>
@@ -248,118 +247,6 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           aria-hidden="true"
         />
       )}
-
-      <footer className="bg-deep-black text-pure-white mt-auto">
-        <div className="container-custom py-8 md:py-12 lg:py-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
-            <div>
-              <Link
-                href="/admin/dashboard"
-                className="block mb-4" aria-label="ICG Admin Home"
-              >
-                <span className="text-3xl md:text-4xl font-heading font-light tracking-tight text-pure-white">
-                  ICG
-                </span>
-              </Link>
-              <p className="text-light-grey text-base md:text-lg max-w-xs leading-relaxed">
-                Building Spaces Creating Value ICG is Lahore&apos;s premier real estate and construction group,
-                delivering exceptional properties and landmark developments.
-              </p>
-              <div className="flex flex-wrap gap-4 mt-6">
-                <a
-                  href="#"
-                  className="w-10 h-10 flex items-center justify-center border border-light-grey/30 hover:border-gold-accent hover:bg-gold-accent/10 transition-all duration-300"
-                  aria-label="Facebook"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Globe2 className="w-5 h-5 text-light-grey hover:text-gold-accent transition-colors" />
-                </a>
-                <a
-                  href="#"
-                  className="w-10 h-10 flex items-center justify-center border border-light-grey/30 hover:border-gold-accent hover:bg-gold-accent/10 transition-all duration-300"
-                  aria-label="Instagram"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Camera className="w-5 h-5 text-light-grey hover:text-gold-accent transition-colors" />
-                </a>
-                <a
-                  href="#"
-                  className="w-10 h-10 flex items-center justify-center border border-light-grey/30 hover:border-gold-accent hover:bg-gold-accent/10 transition-all duration-300"
-                  aria-label="LinkedIn"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Briefcase className="w-5 h-5 text-light-grey hover:text-gold-accent transition-colors" />
-                </a>
-                <a
-                  href="#"
-                  className="w-10 h-10 flex items-center justify-center border border-light-grey/30 hover:border-gold-accent hover:bg-gold-accent/10 transition-all duration-300"
-                  aria-label="Twitter"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <MessageCircle className="w-5 h-5 text-light-grey hover:text-gold-accent transition-colors" />
-                </a>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-sm font-semibold uppercase tracking-widest text-light-grey mb-5">Contact</h3>
-              <ul className="space-y-4 text-light-grey" role="list">
-                <li className="flex items-start gap-3">
-                  <MapPin className="w-5 h-5 mt-0.5 flex-shrink-0" aria-hidden="true" />
-                  <address className="not-italic text-base leading-relaxed max-w-xs">
-                    123 Main Boulevard, Gulberg III, Lahore, Pakistan
-                  </address>
-                </li>
-                <li className="flex items-center gap-3">
-                  <Phone className="w-5 h-5 flex-shrink-0" aria-hidden="true" />
-                  <a href="tel:+9242111424424" className="hover:text-gold-accent transition-colors">
-                    +92 42 111 424 424
-                  </a>
-                </li>
-                <li className="flex items-center gap-3">
-                  <Mail className="w-5 h-5 flex-shrink-0" aria-hidden="true" />
-                  <a href="mailto:info@icg.com.pk" className="hover:text-gold-accent transition-colors">
-                    info@icg.com.pk
-                  </a>
-                </li>
-                <li className="flex items-center gap-3">
-                  <Send className="w-5 h-5 flex-shrink-0" aria-hidden="true" />
-                  <a
-                    href="https://wa.me/923001234567"
-                    className="hover:text-gold-accent transition-colors"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    WhatsApp: +92 300 43242532
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="mt-12 pt-8 border-t border-charcoal">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-              <p className="text-medium-grey text-sm">
-                © 2026 ICG — Investment and Construction Group. All rights reserved.
-              </p>
-              <div className="flex items-center gap-6 text-sm text-medium-grey">
-                <Link href="/admin/dashboard" className="hover:text-pure-white transition-colors">Dashboard</Link>
-                <Link href="/admin/settings" className="hover:text-pure-white transition-colors">Settings</Link>
-                <button
-                  onClick={handleLogout}
-                  className="hover:text-gold-accent transition-colors"
-                >
-                  Sign Out
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }
