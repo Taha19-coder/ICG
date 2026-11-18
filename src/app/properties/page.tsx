@@ -317,7 +317,7 @@ export default function PropertiesPage() {
               />
             </div>
 
-            <div className="flex flex-wrap gap-2">
+            <div className="hidden md:flex md:flex-wrap gap-2">
               <select
                 value={filters.property_type || ''}
                 onChange={e => handlePropertyTypeChange(e, handleFilterChange)}
@@ -350,15 +350,15 @@ export default function PropertiesPage() {
                 ))}
               </select>
 
-              <button
-                onClick={() => setIsMobileFilterOpen(true)}
-                className="md:hidden btn-secondary px-4 py-3"
-                aria-label="Open filters"
-              >
-                <SlidersHorizontal className="w-5 h-5 mr-2" aria-hidden="true" />
-                Filters
-              </button>
             </div>
+            <button
+              onClick={() => setIsMobileFilterOpen(true)}
+              className="md:hidden btn-secondary px-4 py-3 self-start"
+              aria-label="Open filters"
+            >
+              <SlidersHorizontal className="w-5 h-5 mr-2" aria-hidden="true" />
+              Filters
+            </button>
           </div>
         </div>
       </section>
@@ -630,9 +630,9 @@ export default function PropertiesPage() {
               </div>
 
               {totalPages > 1 && (
-                <nav className="mt-12 flex items-center justify-center gap-2" aria-label="Property result pages">
+                <nav className="mt-12 flex flex-wrap items-center justify-center gap-2" aria-label="Property result pages">
                   <button
-                    className="btn-secondary px-6 py-3 disabled:cursor-not-allowed disabled:opacity-50"
+                    className="btn-secondary px-3 py-3 sm:px-6 disabled:cursor-not-allowed disabled:opacity-50"
                     onClick={() => setCurrentPage(page => Math.max(1, page - 1))}
                     disabled={currentPage === 1}
                   >
@@ -642,7 +642,7 @@ export default function PropertiesPage() {
                     <button
                       key={page}
                       className={cn(
-                        'px-6 py-3',
+                        'px-3 py-3 sm:px-6',
                         currentPage === page ? 'btn-primary' : 'btn-secondary'
                       )}
                       onClick={() => setCurrentPage(page)}
@@ -652,7 +652,7 @@ export default function PropertiesPage() {
                     </button>
                   ))}
                   <button
-                    className="btn-secondary px-6 py-3 disabled:cursor-not-allowed disabled:opacity-50"
+                    className="btn-secondary px-3 py-3 sm:px-6 disabled:cursor-not-allowed disabled:opacity-50"
                     onClick={() => setCurrentPage(page => Math.min(totalPages, page + 1))}
                     disabled={currentPage === totalPages}
                   >

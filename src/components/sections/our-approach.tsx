@@ -32,7 +32,7 @@ const steps = [
 
 export function OurApproach() {
   return (
-    <section id="approach" className="py-20 md:py-28 lg:py-36 bg-pure-white" aria-labelledby="approach-heading">
+    <section id="approach" className="py-20 md:py-28 lg:py-36 bg-pure-white overflow-x-clip" aria-labelledby="approach-heading">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -59,16 +59,16 @@ export function OurApproach() {
                 viewport={{ once: true, margin: '-100px' }}
                 transition={{ duration: 0.7, delay: index * 0.15, ease: [0.25, 0.46, 0.45, 0.94] }}
                 className={cn(
-                  'relative flex gap-8 md:gap-12',
+                  'relative flex gap-4 sm:gap-8 md:gap-12',
                   index % 2 === 1 ? 'md:flex-row-reverse' : ''
                 )}
               >
                 <div className={cn(
-                  'relative flex-shrink-0 w-20 md:w-28 flex items-center justify-center z-10',
+                  'relative flex-shrink-0 self-start w-14 sm:w-20 md:w-28 flex items-center justify-center z-10',
                   index % 2 === 1 ? 'md:self-end' : 'md:self-start'
                 )}>
                   <div className="relative z-10">
-                    <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-deep-black flex items-center justify-center text-pure-white font-heading font-medium text-2xl md:text-3xl">
+                    <div className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full bg-deep-black flex items-center justify-center text-pure-white font-heading font-medium text-xl sm:text-2xl md:text-3xl">
                       {step.number}
                     </div>
                   </div>
@@ -76,9 +76,9 @@ export function OurApproach() {
 
                 <div className={cn(
                   'flex-1 pt-4 md:pt-0',
-                  index % 2 === 1 ? 'text-right md:pr-8' : 'md:pl-8'
+                  index % 2 === 1 ? 'text-left md:text-right md:pr-8' : 'md:pl-8'
                 )}>
-                  <div className="w-14 h-14 md:w-16 md:h-16 mx-auto md:mx-0 flex items-center justify-center bg-deep-black/5 border border-light-grey mb-6">
+                  <div className="w-14 h-14 md:w-16 md:h-16 flex items-center justify-center bg-deep-black/5 border border-light-grey mb-6">
                     <step.icon className="w-7 h-7 text-deep-black" aria-hidden="true" />
                   </div>
                   <h3 className="text-2xl md:text-3xl font-heading font-medium text-deep-black mb-4">

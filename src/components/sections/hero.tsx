@@ -40,7 +40,7 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="text-5xl md:text-7xl lg:text-8xl font-heading font-light tracking-tight text-pure-white leading-[1.1] mb-8"
+            className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-heading font-light tracking-tight text-pure-white leading-[1.1] mb-8"
           >
             {siteConfig.company_tagline}
           </motion.h1>

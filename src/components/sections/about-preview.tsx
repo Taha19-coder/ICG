@@ -22,7 +22,7 @@ export function AboutPreview() {
   const siteConfig = useSiteSettings();
 
   return (
-    <section className="py-20 md:py-28 lg:py-36 bg-deep-black text-pure-white" aria-labelledby="about-preview-heading">
+    <section className="py-20 md:py-28 lg:py-36 bg-deep-black text-pure-white overflow-x-clip" aria-labelledby="about-preview-heading">
       <div className="container-custom">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-start">
           <motion.div
@@ -86,7 +86,7 @@ export function AboutPreview() {
               <div className="absolute inset-0 bg-gradient-to-tr from-deep-black/60 to-transparent" />
             </div>
 
-            <div className="mt-10 grid grid-cols-2 gap-6">
+            <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
               {values.map((value, index) => (
                 <motion.div
                   key={value.title}
@@ -94,7 +94,7 @@ export function AboutPreview() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
-                  className="p-6 bg-charcoal/50 border border-light-grey/20"
+                  className="p-5 sm:p-6 bg-charcoal/50 border border-light-grey/20"
                 >
                   <h3 className="text-lg font-heading font-medium mb-2">{value.title}</h3>
                   <p className="text-light-grey text-sm leading-relaxed">{value.description}</p>

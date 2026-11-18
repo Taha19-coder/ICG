@@ -9,7 +9,7 @@ export function ContactCTA() {
   const siteConfig = useSiteSettings();
 
   return (
-    <section className="py-20 md:py-28 lg:py-36 bg-off-white" aria-labelledby="contact-heading">
+    <section className="py-20 md:py-28 lg:py-36 bg-off-white overflow-x-clip" aria-labelledby="contact-heading">
       <div className="container-custom">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <motion.div

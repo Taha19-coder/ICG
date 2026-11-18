@@ -3,7 +3,7 @@
 import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
-import { Building2, MapPin, Clock, CheckCircle, Home, ArrowRight, Filter, X } from 'lucide-react';
+import { Building2, MapPin, Clock, Filter, X } from 'lucide-react';
 import { formatDate } from '@/lib/utils';
 import { type ProjectStatus } from '@/lib/types';
 import { cn } from '@/lib/utils';
@@ -115,67 +115,71 @@ export default function ProjectsPage() {
             ) : isLoading ? (
               <p className="py-20 text-center text-medium-grey" role="status">Loading projects...</p>
             ) : filteredProjects.length > 0 ? (
-              <div className="grid lg:grid-cols-2 gap-8">
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
                 {filteredProjects.map((project, index) => (
                   <motion.article
                     key={project.id}
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.08, ease: [0.25, 0.46, 0.45, 0.94] }}
-                    className="card group overflow-hidden"
+                    className="card group h-full"
                   >
                     <Link
                       href={`/projects/${project.id}`}
-                      className="block relative aspect-[16/10] overflow-hidden bg-charcoal"
+                      className="flex h-full flex-col overflow-hidden"
                       aria-label={`View ${project.title} project details`}
                     >
-                      {project.images[0]?.url && (
-                        <motion.img
-                          src={project.images[0].url}
-                          alt={project.images[0].alt || project.title}
-                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                        />
-                      )}
-                      <div className="absolute inset-0 bg-gradient-to-t from-deep-black/80 via-deep-black/20 to-transparent" />
-                      <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
-                        <div className="flex items-center gap-2 text-pure-white/80 text-sm mb-3">
-                          <MapPin className="w-4 h-4" aria-hidden="true" />
-                          <span>{project.location}</span>
+                      <div className="relative aspect-[4/3] overflow-hidden bg-light-grey">
+                        {project.images[0]?.url && (
+                          <motion.img
+                            src={project.images[0].url}
+                            alt={project.images[0].alt || project.title}
+                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                          />
+                        )}
+                        <div className="absolute top-4 left-4">
+                          <span className={cn(
+                            'px-3 py-1 text-xs font-semibold uppercase tracking-wider text-pure-white',
+                            statusColors[project.status]
+                          )}>
+                            {projectStatusLabels[project.status]}
+                          </span>
                         </div>
-                        <h3 className="text-2xl md:text-3xl font-heading font-light text-pure-white mb-4">
+                      </div>
+
+                      <div className="flex flex-1 flex-col p-6">
+                        <div className="flex items-center gap-2 text-medium-grey text-sm mb-3">
+                          <MapPin className="w-4 h-4" aria-hidden="true" />
+                          <span className="truncate">{project.location}</span>
+                        </div>
+                        <h3 className="text-xl font-heading font-medium text-deep-black mb-2 line-clamp-1 group-hover:text-charcoal transition-colors">
                           {project.title}
                         </h3>
-                        <p className="text-light-grey text-base max-w-md mb-6 line-clamp-2">
+                        <p className="text-medium-grey text-sm leading-relaxed mb-4 line-clamp-2">
                           {project.short_description}
                         </p>
 
                         {project.status === 'ongoing' && (
-                          <div className="space-y-3 mb-6">
+                          <div className="space-y-2 mb-4">
                             <div>
                               <div className="flex items-center justify-between text-sm mb-2">
-                                <span className="text-light-grey">Construction Progress</span>
-                                <span className="text-pure-white font-semibold">{project.progress_percentage}%</span>
+                                <span className="text-medium-grey">Construction Progress</span>
+                                <span className="text-deep-black font-semibold">{project.progress_percentage}%</span>
                               </div>
-                              <div className="h-2 bg-pure-white/20 overflow-hidden">
+                              <div className="h-2 bg-light-grey overflow-hidden">
                                 <motion.div
                                   initial={{ width: 0 }}
                                   whileInView={{ width: `${project.progress_percentage}%` }}
                                   viewport={{ once: true }}
                                   transition={{ duration: 1, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
-                                  className="h-full bg-pure-white"
+                                  className="h-full bg-deep-black"
                                 />
                               </div>
                             </div>
                           </div>
                         )}
 
-                        <div className="flex flex-wrap items-center gap-4 text-sm text-light-grey">
-                          <span className={cn(
-                            'inline-flex items-center gap-1 px-3 py-1 text-xs font-semibold uppercase tracking-wider',
-                            statusColors[project.status]
-                          )}>
-                            {projectStatusLabels[project.status]}
-                          </span>
+                        <div className="mt-auto flex flex-wrap items-center gap-4 pt-4 border-t border-light-grey text-sm text-medium-grey">
                           {project.expected_completion_date && (
                             <span className="flex items-center gap-1">
                               <Clock className="w-4 h-4" aria-hidden="true" />
