@@ -80,10 +80,10 @@ export function OurApproach() {
                   'flex-1 pt-4 md:pt-0',
                   index % 2 === 1 ? 'text-left md:text-right md:pr-8' : 'md:pl-8'
                 )}>
-                  <div className="w-14 h-14 md:w-16 md:h-16 flex items-center justify-center bg-deep-black/5 border border-light-grey mb-6 group-hover:border-gold-accent transition-all duration-300">
-                    <step.icon className="w-7 h-7 text-deep-black group-hover:text-gold-accent transition-colors duration-300" aria-hidden="true" />
+                  <div className="w-14 h-14 md:w-16 md:h-16 flex items-center justify-center bg-deep-black/5 border border-light-grey group-hover:border-deep-black transition-all duration-300">
+                    <step.icon className="w-7 h-7 text-deep-black group-hover:text-charcoal transition-colors duration-300" aria-hidden="true" />
                   </div>
-                  <h3 className="text-2xl md:text-3xl font-heading font-medium text-deep-black mb-4 group-hover:text-gold-accent transition-colors">
+                  <h3 className="text-2xl md:text-3xl font-heading font-medium text-deep-black mb-4 group-hover:text-charcoal transition-colors">
                     {step.title}
                   </h3>
                   <p className="text-medium-grey text-lg leading-relaxed">

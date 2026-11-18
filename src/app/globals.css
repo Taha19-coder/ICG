@@ -7,8 +7,6 @@
   --color-light-grey: #E8E9EC;
   --color-off-white: #F7F7F5;
   --color-pure-white: #FFFFFF;
-  --color-gold-accent: #C5A059;
-
   --font-sans: 'Manrope', 'Inter', system-ui, sans-serif;
   --font-heading: 'Manrope', 'Inter', system-ui, sans-serif;
 
@@ -103,10 +101,6 @@
     @apply inline-flex items-center justify-center px-8 py-3.5 text-sm font-semibold text-deep-black bg-transparent border-2 border-deep-black rounded-none transition-all duration-300 hover:bg-deep-black hover:text-pure-white focus:outline-none focus:ring-2 focus:ring-deep-black focus:ring-offset-2;
   }
 
-  .btn-gold {
-    @apply inline-flex items-center justify-center px-8 py-3.5 text-sm font-semibold text-deep-black bg-gold-accent rounded-none transition-all duration-300 hover:bg-deep-black hover:text-pure-white hover:shadow-lg hover:shadow-gold-accent/20 focus:outline-none focus:ring-2 focus:ring-gold-accent focus:ring-offset-2;
-  }
-
   .btn-whatsapp {
     @apply inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold text-pure-white bg-[#25D366] rounded-none transition-all duration-300 hover:bg-[#128C7E] hover:shadow-lg hover:shadow-[#25D366]/30 focus:outline-none focus:ring-2 focus:ring-[#25D366] focus:ring-offset-2;
   }
@@ -120,7 +114,7 @@
   }
 
   .card {
-    @apply bg-pure-white border border-light-grey/50 overflow-hidden transition-all duration-500 rounded-xl hover:border-gold-accent/40 hover:shadow-2xl hover:-translate-y-2 hover:shadow-gold-accent/5;
+    @apply bg-pure-white border border-light-grey/50 overflow-hidden transition-all duration-500 rounded-xl hover:border-deep-black/40 hover:shadow-2xl hover:-translate-y-2 hover:shadow-deep-black/5;
   }
 
   .section-heading {
@@ -132,7 +126,7 @@
   }
 
   .section-divider::after {
-    @apply absolute left-1/2 -top-1 h-px w-12 bg-gold-accent;
+    @apply absolute left-1/2 -top-1 h-px w-12 bg-deep-black;
     content: '';
     transform: translateX(-50%);
   }
@@ -263,23 +257,13 @@
     color: #0A0B0D;
   }
 
-  html.dark .btn-gold {
-    background-color: #C5A059;
-    color: #0A0B0D;
-  }
-
-  html.dark .btn-gold:hover {
-    background-color: #0A0B0D;
-    color: #F5F5F5;
-  }
-
   html.dark .card {
     background-color: #141618;
     border-color: #34383D;
   }
 
   html.dark .card:hover {
-    border-color: #C5A059/40;
+    border-color: #D1D5DB;
   }
 
   html.dark .input-field:focus {

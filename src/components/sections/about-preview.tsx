@@ -31,8 +31,8 @@ export function AboutPreview() {
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
           >
-            <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-gold-accent mb-8">
-              <span className="w-1 h-1 bg-gold-accent rounded-full" />
+            <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-deep-black mb-8">
+              <span className="w-1 h-1 bg-deep-black rounded-full" />
               About ICG
             </span>
             <h2 id="about-preview-heading" className="text-4xl md:text-5xl lg:text-6xl font-heading font-light tracking-tight mb-8">
@@ -97,7 +97,7 @@ export function AboutPreview() {
                   transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
                   className="card p-5 sm:p-6 bg-charcoal/50 border border-light-grey/20"
                 >
-                  <h3 className="text-lg font-heading font-medium mb-2 group-hover:text-gold-accent transition-colors">
+                  <h3 className="text-lg font-heading font-medium mb-2 group-hover:text-charcoal transition-colors">
                     {value.title}
                   </h3>
                   <p className="text-light-grey text-sm leading-relaxed">{value.description}</p>

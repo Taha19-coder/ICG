@@ -44,7 +44,7 @@ export function HeroSection() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="inline-flex items-center gap-2 text-pure-white text-sm font-semibold uppercase tracking-[0.2em] mb-8 animate-float"
           >
-            <span className="w-1 h-1 bg-gold-accent rounded-full animate-pulse-slow" />
+            <span className="w-1 h-1 bg-deep-black rounded-full animate-pulse-slow" />
             <span>Investment & Construction Group</span>
           </motion.div>
 

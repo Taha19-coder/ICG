@@ -37,12 +37,12 @@ export function Footer() {
                 <a
                   key={label}
                   href={href}
-                  className="w-10 h-10 flex items-center justify-center border border-light-grey/30 hover:border-gold-accent hover:bg-gold-accent/10 transition-all duration-300"
+                  className="w-10 h-10 flex items-center justify-center border border-light-grey/30 hover:border-deep-black hover:bg-deep-black/10 transition-all duration-300"
                   aria-label={label}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Icon className="w-5 h-5 text-light-grey hover:text-gold-accent transition-colors" />
+                  <Icon className="w-5 h-5 text-light-grey hover:text-deep-black transition-colors" />
                 </a>
               ))}
             </div>
