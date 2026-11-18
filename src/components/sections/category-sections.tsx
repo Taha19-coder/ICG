@@ -50,10 +50,10 @@ export function CategorySections() {
           {categories.map((category, index) => (
             <motion.article
               key={category.id}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 50, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true, margin: '-100px' }}
-              transition={{ duration: 0.7, delay: index * 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
+              transition={{ duration: 0.7, delay: index * 0.15, ease: [0.25, 0.46, 0.45, 0.94] }}
               className="card group overflow-hidden"
             >
               <Link
@@ -64,9 +64,10 @@ export function CategorySections() {
                 <motion.img
                   src={category.image}
                   alt={category.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                   initial={{ scale: 1 }}
-                  whileInView={{ scale: 1 }}
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ type: 'spring', stiffness: 300, damping: 30 }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-deep-black/90 via-deep-black/30 to-transparent" />
                 <div className="absolute inset-0 bg-deep-black/10 group-hover:bg-deep-black/20 transition-colors duration-500" />
@@ -80,7 +81,7 @@ export function CategorySections() {
                     className="relative z-10"
                   >
                     <motion.span
-                      className="inline-block px-3 py-1 text-xs font-medium uppercase tracking-widest bg-pure-white/10 border border-pure-white/20 text-pure-white mb-4"
+                      className="inline-block px-3 py-1 text-xs font-semibold uppercase tracking-widest bg-pure-white/10 border border-pure-white/20 text-pure-white mb-4"
                     >
                       {category.id === 'construction' ? 'Development' : 'Residential'}
                     </motion.span>

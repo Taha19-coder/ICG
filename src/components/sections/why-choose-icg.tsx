@@ -72,16 +72,16 @@ export function WhyChooseICG() {
           {reasons.map((reason, index) => (
             <motion.article
               key={reason.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 40, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true, margin: '-100px' }}
-              transition={{ duration: 0.6, delay: index * 0.08, ease: [0.25, 0.46, 0.45, 0.94] }}
+              transition={{ duration: 0.6, delay: index * 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
               className="card p-6 md:p-8 text-center hover:bg-off-white"
             >
-              <div className="w-14 h-14 mx-auto mb-6 flex items-center justify-center bg-deep-black/5 border border-light-grey group-hover:border-deep-black group-hover:bg-deep-black transition-all duration-300">
-                <reason.icon className="w-7 h-7 text-deep-black group-hover:text-pure-white transition-colors duration-300" aria-hidden="true" />
+              <div className="w-14 h-14 mx-auto mb-6 flex items-center justify-center bg-deep-black/5 border border-light-grey group-hover:border-gold-accent group-hover:bg-gold-accent/10 transition-all duration-500">
+                <reason.icon className="w-7 h-7 text-deep-black group-hover:text-gold-accent transition-colors duration-300" aria-hidden="true" />
               </div>
-              <h3 className="text-xl font-heading font-medium text-deep-black mb-3">
+              <h3 className="text-xl font-heading font-medium text-deep-black mb-3 group-hover:text-gold-accent transition-colors">
                 {reason.title}
               </h3>
               <p className="text-medium-grey leading-relaxed">

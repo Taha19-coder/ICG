@@ -91,13 +91,15 @@ export function AboutPreview() {
               {values.map((value, index) => (
                 <motion.div
                   key={value.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0, y: 30, scale: 0.95 }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
-                  className="p-5 sm:p-6 bg-charcoal/50 border border-light-grey/20"
+                  className="card p-5 sm:p-6 bg-charcoal/50 border border-light-grey/20"
                 >
-                  <h3 className="text-lg font-heading font-medium mb-2">{value.title}</h3>
+                  <h3 className="text-lg font-heading font-medium mb-2 group-hover:text-gold-accent transition-colors">
+                    {value.title}
+                  </h3>
                   <p className="text-light-grey text-sm leading-relaxed">{value.description}</p>
                 </motion.div>
               ))}

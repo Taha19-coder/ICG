@@ -56,8 +56,8 @@ export function OurApproach() {
             {steps.map((step, index) => (
               <motion.article
                 key={step.title}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -60 : 60 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, x: index % 2 === 0 ? -60 : 60, scale: 0.95 }}
+                whileInView={{ opacity: 1, x: 0, scale: 1 }}
                 viewport={{ once: true, margin: '-100px' }}
                 transition={{ duration: 0.7, delay: index * 0.15, ease: [0.25, 0.46, 0.45, 0.94] }}
                 className={cn(
@@ -70,7 +70,7 @@ export function OurApproach() {
                   index % 2 === 1 ? 'md:self-end' : 'md:self-start'
                 )}>
                   <div className="relative z-10">
-                    <div className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full bg-deep-black flex items-center justify-center text-pure-white font-heading font-medium text-xl sm:text-2xl md:text-3xl">
+                    <div className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full bg-deep-black flex items-center justify-center text-pure-white font-heading font-medium text-xl sm:text-2xl md:text-3xl group-hover:scale-110 transition-transform duration-300">
                       {step.number}
                     </div>
                   </div>
@@ -80,10 +80,10 @@ export function OurApproach() {
                   'flex-1 pt-4 md:pt-0',
                   index % 2 === 1 ? 'text-left md:text-right md:pr-8' : 'md:pl-8'
                 )}>
-                  <div className="w-14 h-14 md:w-16 md:h-16 flex items-center justify-center bg-deep-black/5 border border-light-grey mb-6">
-                    <step.icon className="w-7 h-7 text-deep-black" aria-hidden="true" />
+                  <div className="w-14 h-14 md:w-16 md:h-16 flex items-center justify-center bg-deep-black/5 border border-light-grey mb-6 group-hover:border-gold-accent transition-all duration-300">
+                    <step.icon className="w-7 h-7 text-deep-black group-hover:text-gold-accent transition-colors duration-300" aria-hidden="true" />
                   </div>
-                  <h3 className="text-2xl md:text-3xl font-heading font-medium text-deep-black mb-4">
+                  <h3 className="text-2xl md:text-3xl font-heading font-medium text-deep-black mb-4 group-hover:text-gold-accent transition-colors">
                     {step.title}
                   </h3>
                   <p className="text-medium-grey text-lg leading-relaxed">

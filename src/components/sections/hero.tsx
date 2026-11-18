@@ -1,6 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Link from 'next/link';
+import { ArrowRight, Mail } from 'lucide-react';
 import { useSiteSettings } from '@/hooks/use-site-settings';
 
 const heroImages = [
@@ -31,40 +33,61 @@ export function HeroSection() {
 
       <div className="relative z-10 container-custom py-24 px-4">
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 60 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+          transition={{ duration: 1, ease: [0.25, 0.46, 0.45, 0.94] }}
           className="max-w-4xl text-center"
         >
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="inline-flex items-center gap-2 text-pure-white text-sm font-semibold uppercase tracking-[0.2em] mb-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="inline-flex items-center gap-2 text-pure-white text-sm font-semibold uppercase tracking-[0.2em] mb-8 animate-float"
           >
-            <span className="w-1 h-1 bg-gold-accent rounded-full" />
+            <span className="w-1 h-1 bg-gold-accent rounded-full animate-pulse-slow" />
             <span>Investment & Construction Group</span>
           </motion.div>
 
           <motion.h1
             id="hero-heading"
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 1, delay: 0.4 }}
             className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-heading font-light tracking-tight text-pure-white leading-[1.1] mb-8"
           >
             {siteConfig.company_tagline}
           </motion.h1>
 
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
+            transition={{ duration: 1, delay: 0.6 }}
             className="text-lg md:text-xl lg:text-2xl text-light-grey font-normal max-w-2xl mx-auto leading-relaxed tracking-wide"
           >
             Discover exceptional properties and development opportunities with Investment and Construction Group.
           </motion.p>
 
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-12"
+          >
+            <Link
+              href="/properties"
+              className="btn-primary flex items-center gap-2"
+            >
+              Explore Properties
+              <ArrowRight className="w-5 h-5" aria-hidden="true" />
+            </Link>
+            <Link
+              href="/contact"
+              className="btn-secondary flex items-center gap-2"
+            >
+              Contact Us
+              <Mail className="w-5 h-5" aria-hidden="true" />
+            </Link>
+          </motion.div>
         </motion.div>
       </div>
     </section>

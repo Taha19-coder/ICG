@@ -71,8 +71,8 @@ export function FeaturedProperties() {
           {properties.map((property, index) => (
             <motion.article
               key={property.id}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 40, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true, margin: '-100px' }}
               transition={{ duration: 0.6, delay: index * 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
               className="card group"
@@ -87,7 +87,10 @@ export function FeaturedProperties() {
                     <motion.img
                       src={property.images[0].url}
                       alt={property.images[0].alt || property.title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                      initial={{ scale: 1 }}
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ type: 'spring', stiffness: 300, damping: 30 }}
                     />
                   )}
                   {property.images.length > 1 && (

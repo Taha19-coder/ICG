@@ -67,22 +67,26 @@ export function ContactCTA() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link
+              <motion.a
                 href="/contact"
-                className="btn-primary"
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+                className="btn-primary flex items-center gap-2"
               >
                 Send an Inquiry
                 <ArrowRight className="w-5 h-5" aria-hidden="true" />
-              </Link>
-              <a
+              </motion.a>
+              <motion.a
                 href={`https://wa.me/${siteConfig.whatsapp_business_number.replace(/\D/g, '')}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-whatsapp"
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+                className="btn-whatsapp flex items-center gap-2"
               >
                 <Send className="w-5 h-5" aria-hidden="true" />
                 WhatsApp Us
-              </a>
+              </motion.a>
             </div>
           </motion.div>
 
