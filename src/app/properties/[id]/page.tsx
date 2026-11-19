@@ -109,8 +109,8 @@ export default function PropertyDetailPage() {
 
       <section className="py-6 sm:py-8 lg:py-12" aria-labelledby="property-title">
         <div className="container-custom">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 lg:gap-12">
-            <div className="lg:col-span-2 space-y-4 sm:space-y-6">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-12">
+            <div className="min-w-0 lg:col-span-2 space-y-4 sm:space-y-6">
               <div className="relative">
                 <div className="relative aspect-[16/9] rounded-none overflow-hidden bg-light-grey">
                   {property.images[currentImageIndex]?.url && (
@@ -206,7 +206,7 @@ export default function PropertyDetailPage() {
                     )}
                   </div>
                   <div className="w-px h-8 sm:h-12 bg-light-grey self-stretch sm:self-auto" aria-hidden="true" />
-                  <div className="flex-1 grid sm:grid-cols-2 md:grid-cols-4 gap-2 sm:gap-4">
+                  <div className="flex-1 w-full grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-4">
                     {property.bedrooms > 0 && (
                       <div className="flex flex-col items-center gap-1 p-2 sm:p-3 bg-off-white">
                         <Bed className="w-5 sm:w-6 h-5 sm:h-6 text-deep-black" aria-hidden="true" />
@@ -249,7 +249,7 @@ export default function PropertyDetailPage() {
                 </div>
               </div>
 
-              <div className="grid sm:grid-cols-2 gap-4 sm:gap-6 pt-6 sm:pt-8 border-t border-light-grey">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 pt-6 sm:pt-8 border-t border-light-grey">
                 <div>
                   <h2 className="text-lg sm:text-xl font-heading font-medium text-deep-black mb-2 sm:mb-4">Description</h2>
                   <p className="text-medium-grey leading-relaxed whitespace-normal overflow-wrap break-word">{property.description}</p>
@@ -257,7 +257,7 @@ export default function PropertyDetailPage() {
 
                 <div>
                   <h2 className="text-lg sm:text-xl font-heading font-medium text-deep-black mb-2 sm:mb-4">Property Features</h2>
-                  <ul className="grid sm:grid-cols-2 gap-2 sm:gap-3" role="list">
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3" role="list">
                     {property.features.map((feature, index) => (
                       <li key={index} className="flex items-center gap-1 sm:gap-2 text-medium-grey text-sm">
                         <Check className="w-4 sm:w-5 h-4 sm:h-5 text-deep-black flex-shrink-0" aria-hidden="true" />
@@ -270,7 +270,7 @@ export default function PropertyDetailPage() {
 
               <div className="pt-6 sm:pt-8 border-t border-light-grey">
                 <h2 className="text-lg sm:text-xl font-heading font-medium text-deep-black mb-2 sm:mb-4">Property Details</h2>
-                <dl className="grid sm:grid-cols-2 gap-2 sm:gap-4" role="list">
+                <dl className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-4" role="list">
                   <PropertyDetailItem label="Reference ID" value={property.reference_id} />
                   <PropertyDetailItem label="Property Type" value={propertyTypeLabels[property.property_type]} />
                   <PropertyDetailItem label="Purpose" value={purposeLabels[property.purpose]} />
@@ -311,7 +311,7 @@ export default function PropertyDetailPage() {
               {similarProperties.length > 0 && (
                 <div className="pt-8 border-t border-light-grey">
                   <h2 className="text-xl font-heading font-medium text-deep-black mb-6">Similar Properties</h2>
-                  <div className="grid sm:grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-3">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-3">
                     {similarProperties.map((similarProp, index) => (
                       <motion.article
                         key={similarProp.id}
@@ -369,7 +369,7 @@ export default function PropertyDetailPage() {
               )}
             </div>
 
-            <aside className="lg:col-span-1">
+            <aside className="min-w-0 lg:col-span-1">
               <div className="sticky top-28 space-y-6">
                 <div className="bg-deep-black text-pure-white p-8">
                   <h3 className="text-xl font-heading font-light mb-6">Interested in This Property?</h3>
