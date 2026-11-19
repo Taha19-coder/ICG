@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight, Building2 } from 'lucide-react';
 import { useSiteSettings } from '@/hooks/use-site-settings';
 
 const heroImages = [
@@ -64,32 +63,6 @@ export function HeroSection() {
           >
             Discover exceptional properties and development opportunities with Investment and Construction Group.
           </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center mt-12"
-          >
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              transition={{ type: 'spring', stiffness: 400, damping: 17 }}
-              className="btn-primary flex items-center gap-2"
-            >
-              Explore Properties
-              <ArrowRight className="w-5 h-5" aria-hidden="true" />
-            </motion.button>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              transition={{ type: 'spring', stiffness: 400, damping: 17 }}
-              className="btn-secondary flex items-center gap-2"
-            >
-              View Projects
-              <Building2 className="w-5 h-5" aria-hidden="true" />
-            </motion.button>
-          </motion.div>
 
         </motion.div>
       </div>
