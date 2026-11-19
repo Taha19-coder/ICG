@@ -83,7 +83,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
-      <body className="bg-pure-white text-deep-black antialiased">
+      <body className="bg-pure-white text-deep-black antialiased overflow-x-hidden">
         <Providers>
           <LoadingScreen />
           <Navbar />

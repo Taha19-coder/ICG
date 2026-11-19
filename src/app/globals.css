@@ -114,7 +114,7 @@
   }
 
   .card {
-    @apply bg-pure-white border border-light-grey/50 overflow-hidden transition-all duration-500 rounded-xl hover:border-deep-black/40 hover:shadow-2xl hover:-translate-y-2 hover:shadow-deep-black/5;
+    @apply bg-pure-white border border-light-grey/50 overflow-hidden transition-all duration-500 rounded-2xl hover:border-deep-black/40 hover:shadow-2xl hover:-translate-y-2 hover:shadow-deep-black/5;
   }
 
   .section-heading {

@@ -122,11 +122,11 @@ export default function ProjectsPage() {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.08, ease: [0.25, 0.46, 0.45, 0.94] }}
-                    className="card group h-full"
+                    className="card group"
                   >
                     <Link
                       href={`/projects/${project.id}`}
-                      className="flex h-full flex-col overflow-hidden"
+                      className="block overflow-hidden"
                       aria-label={`View ${project.title} project details`}
                     >
                       <div className="relative aspect-[4/3] overflow-hidden bg-light-grey">
@@ -147,7 +147,7 @@ export default function ProjectsPage() {
                         </div>
                       </div>
 
-                      <div className="flex flex-1 flex-col p-6">
+                      <div className="p-6">
                         <div className="flex items-center gap-2 text-medium-grey text-sm mb-3">
                           <MapPin className="w-4 h-4" aria-hidden="true" />
                           <span className="truncate">{project.location}</span>
