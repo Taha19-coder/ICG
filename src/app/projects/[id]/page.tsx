@@ -83,7 +83,7 @@ export default function ProjectDetailPage() {
             </li>
             <li className="flex items-center gap-2">
               <span className="w-4 h-4" aria-hidden="true">/</span>
-              <span className="text-deep-black font-medium truncate max-w-xs sm:max-w-[200px]" aria-current="page">{project.title}</span>
+              <span className="text-deep-black font-medium overflow-wrap break-word" aria-current="page">{project.title}</span>
             </li>
           </ol>
         </div>

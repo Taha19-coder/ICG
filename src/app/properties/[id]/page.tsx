@@ -101,7 +101,7 @@ export default function PropertyDetailPage() {
             </li>
             <li className="flex items-center gap-2">
               <ChevronRight className="w-4 h-4" aria-hidden="true" />
-              <span className="text-deep-black font-medium truncate max-w-xs" aria-current="page">{property.title}</span>
+              <span className="text-deep-black font-medium overflow-wrap break-word" aria-current="page">{property.title}</span>
             </li>
           </ol>
         </div>
