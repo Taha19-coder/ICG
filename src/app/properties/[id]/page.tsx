@@ -101,16 +101,16 @@ export default function PropertyDetailPage() {
             </li>
             <li className="flex items-center gap-2">
               <ChevronRight className="w-4 h-4" aria-hidden="true" />
-              <span className="text-deep-black font-medium truncate max-w-xs" aria-current="page">{property.title}</span>
+              <span className="text-deep-black font-medium overflow-wrap break-word" aria-current="page">{property.title}</span>
             </li>
           </ol>
         </div>
       </nav>
 
-      <section className="py-8" aria-labelledby="property-title">
+      <section className="py-6 sm:py-8 lg:py-12" aria-labelledby="property-title">
         <div className="container-custom">
-          <div className="grid lg:grid-cols-3 gap-8 lg:gap-12">
-            <div className="lg:col-span-2 space-y-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 lg:gap-12">
+            <div className="lg:col-span-2 space-y-4 sm:space-y-6">
               <div className="relative">
                 <div className="relative aspect-[16/9] rounded-none overflow-hidden bg-light-grey">
                   {property.images[currentImageIndex]?.url && (
@@ -196,51 +196,51 @@ export default function PropertyDetailPage() {
                   </div>
                 </div>
 
-                <div className="flex items-center gap-6 md:gap-8 pt-6 border-t border-light-grey">
-                  <div className="text-center">
-                    <div className="text-3xl md:text-4xl font-heading font-semibold text-deep-black">
+                <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-6 pt-4 sm:pt-6 border-t border-light-grey">
+                  <div className="text-center w-full sm:w-auto">
+                    <div className="text-2xl sm:text-3xl md:text-4xl font-heading font-semibold text-deep-black">
                       {formatPrice(property.price)}
                     </div>
                     {property.purpose === 'rent' && (
                       <div className="text-medium-grey text-sm">/ month</div>
                     )}
                   </div>
-                  <div className="w-px h-12 bg-light-grey" aria-hidden="true" />
-                  <div className="flex-1 grid grid-cols-2 md:grid-cols-4 gap-4">
+                  <div className="w-px h-8 sm:h-12 bg-light-grey self-stretch sm:self-auto" aria-hidden="true" />
+                  <div className="flex-1 grid sm:grid-cols-2 md:grid-cols-4 gap-2 sm:gap-4">
                     {property.bedrooms > 0 && (
-                      <div className="flex flex-col items-center gap-1 p-3 bg-off-white">
-                        <Bed className="w-6 h-6 text-deep-black" aria-hidden="true" />
-                        <span className="text-sm font-medium text-deep-black">{property.bedrooms}</span>
-                        <span className="text-xs text-medium-grey">Bedrooms</span>
+                      <div className="flex flex-col items-center gap-1 p-2 sm:p-3 bg-off-white">
+                        <Bed className="w-5 sm:w-6 h-5 sm:h-6 text-deep-black" aria-hidden="true" />
+                        <span className="text-xs sm:text-sm font-medium text-deep-black">{property.bedrooms}</span>
+                        <span className="text-[10px] sm:text-xs text-medium-grey">Bedrooms</span>
                       </div>
                     )}
                     {property.bathrooms > 0 && (
-                      <div className="flex flex-col items-center gap-1 p-3 bg-off-white">
-                        <Bath className="w-6 h-6 text-deep-black" aria-hidden="true" />
-                        <span className="text-sm font-medium text-deep-black">{property.bathrooms}</span>
-                        <span className="text-xs text-medium-grey">Bathrooms</span>
+                      <div className="flex flex-col items-center gap-1 p-2 sm:p-3 bg-off-white">
+                        <Bath className="w-5 sm:w-6 h-5 sm:h-6 text-deep-black" aria-hidden="true" />
+                        <span className="text-xs sm:text-sm font-medium text-deep-black">{property.bathrooms}</span>
+                        <span className="text-[10px] sm:text-xs text-medium-grey">Bathrooms</span>
                       </div>
                     )}
                     {(property.covered_area > 0 || property.plot_size > 0) && (
-                      <div className="flex flex-col items-center gap-1 p-3 bg-off-white">
-                        <Square className="w-6 h-6 text-deep-black" aria-hidden="true" />
-                        <span className="text-sm font-medium text-deep-black">
+                      <div className="flex flex-col items-center gap-1 p-2 sm:p-3 bg-off-white">
+                        <Square className="w-5 sm:w-6 h-5 sm:h-6 text-deep-black" aria-hidden="true" />
+                        <span className="text-xs sm:text-sm font-medium text-deep-black overflow-wrap break-word">
                           {property.covered_area > 0
                             ? formatArea(property.covered_area, property.area_unit)
                             : formatArea(property.plot_size, property.area_unit)}
                         </span>
-                        <span className="text-xs text-medium-grey">Total Area</span>
+                        <span className="text-[10px] sm:text-xs text-medium-grey">Total Area</span>
                       </div>
                     )}
                     {(property.kitchens > 0 || property.floors > 0 || property.parking > 0) && (
-                      <div className="flex flex-col items-center gap-1 p-3 bg-off-white">
-                        <Home className="w-6 h-6 text-deep-black" aria-hidden="true" />
-                        <span className="text-sm font-medium text-deep-black">
+                      <div className="flex flex-col items-center gap-1 p-2 sm:p-3 bg-off-white">
+                        <Home className="w-5 sm:w-6 h-5 sm:h-6 text-deep-black" aria-hidden="true" />
+                        <span className="text-xs sm:text-sm font-medium text-deep-black overflow-wrap break-word">
                           {property.kitchens > 0 ? `${property.kitchens} Kitchen` :
                            property.floors > 0 ? `${property.floors} Floor` :
                            `${property.parking} Parking`}
                         </span>
-                        <span className="text-xs text-medium-grey">
+                        <span className="text-[10px] sm:text-xs text-medium-grey">
                           {property.kitchens > 0 ? 'Kitchens' : property.floors > 0 ? 'Floors' : 'Parking'}
                         </span>
                       </div>
@@ -249,28 +249,28 @@ export default function PropertyDetailPage() {
                 </div>
               </div>
 
-              <div className="grid md:grid-cols-2 gap-8 pt-8 border-t border-light-grey">
+              <div className="grid sm:grid-cols-2 gap-4 sm:gap-6 pt-6 sm:pt-8 border-t border-light-grey">
                 <div>
-                  <h2 className="text-xl font-heading font-medium text-deep-black mb-4">Description</h2>
-                  <p className="text-medium-grey leading-relaxed whitespace-pre-line">{property.description}</p>
+                  <h2 className="text-lg sm:text-xl font-heading font-medium text-deep-black mb-2 sm:mb-4">Description</h2>
+                  <p className="text-medium-grey leading-relaxed whitespace-normal overflow-wrap break-word">{property.description}</p>
                 </div>
 
                 <div>
-                  <h2 className="text-xl font-heading font-medium text-deep-black mb-4">Property Features</h2>
-                  <ul className="grid grid-cols-2 gap-3" role="list">
+                  <h2 className="text-lg sm:text-xl font-heading font-medium text-deep-black mb-2 sm:mb-4">Property Features</h2>
+                  <ul className="grid sm:grid-cols-2 gap-2 sm:gap-3" role="list">
                     {property.features.map((feature, index) => (
-                      <li key={index} className="flex items-center gap-2 text-medium-grey">
-                        <Check className="w-5 h-5 text-deep-black flex-shrink-0" aria-hidden="true" />
-                        <span>{feature}</span>
+                      <li key={index} className="flex items-center gap-1 sm:gap-2 text-medium-grey text-sm">
+                        <Check className="w-4 sm:w-5 h-4 sm:h-5 text-deep-black flex-shrink-0" aria-hidden="true" />
+                        <span className="overflow-wrap break-word">{feature}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
               </div>
 
-              <div className="pt-8 border-t border-light-grey">
-                <h2 className="text-xl font-heading font-medium text-deep-black mb-4">Property Details</h2>
-                <dl className="grid md:grid-cols-2 gap-4" role="list">
+              <div className="pt-6 sm:pt-8 border-t border-light-grey">
+                <h2 className="text-lg sm:text-xl font-heading font-medium text-deep-black mb-2 sm:mb-4">Property Details</h2>
+                <dl className="grid sm:grid-cols-2 gap-2 sm:gap-4" role="list">
                   <PropertyDetailItem label="Reference ID" value={property.reference_id} />
                   <PropertyDetailItem label="Property Type" value={propertyTypeLabels[property.property_type]} />
                   <PropertyDetailItem label="Purpose" value={purposeLabels[property.purpose]} />
@@ -295,13 +295,13 @@ export default function PropertyDetailPage() {
               </div>
 
               {property.nearby_landmarks.length > 0 && (
-                <div className="pt-8 border-t border-light-grey">
-                  <h2 className="text-xl font-heading font-medium text-deep-black mb-4">Nearby Landmarks</h2>
-                  <ul className="flex flex-wrap gap-3" role="list">
+                <div className="pt-6 sm:pt-8 border-t border-light-grey">
+                  <h2 className="text-lg sm:text-xl font-heading font-medium text-deep-black mb-2 sm:mb-4">Nearby Landmarks</h2>
+                  <ul className="flex flex-wrap gap-2 sm:gap-3" role="list">
                     {property.nearby_landmarks.map((landmark, index) => (
-                      <li key={index} className="flex items-center gap-2 px-4 py-2 bg-off-white border border-light-grey">
-                        <MapPinIcon className="w-4 h-4 text-medium-grey" aria-hidden="true" />
-                        <span className="text-medium-grey">{landmark}</span>
+                      <li key={index} className="flex items-center gap-1 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-off-white border border-light-grey">
+                        <MapPinIcon className="w-3.5 sm:w-4 h-3.5 sm:h-4 text-medium-grey" aria-hidden="true" />
+                        <span className="text-xs sm:text-sm text-medium-grey overflow-wrap break-word">{landmark}</span>
                       </li>
                     ))}
                   </ul>
@@ -311,7 +311,7 @@ export default function PropertyDetailPage() {
               {similarProperties.length > 0 && (
                 <div className="pt-8 border-t border-light-grey">
                   <h2 className="text-xl font-heading font-medium text-deep-black mb-6">Similar Properties</h2>
-                  <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                  <div className="grid sm:grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-3">
                     {similarProperties.map((similarProp, index) => (
                       <motion.article
                         key={similarProp.id}
