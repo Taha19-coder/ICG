@@ -77,13 +77,22 @@ export function WhyChooseICG() {
               viewport={{ once: true, margin: '-100px' }}
               transition={{ duration: 0.6, delay: index * 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
               className="card p-6 md:p-8 text-center hover:bg-off-white"
+              whileHover={{ y: -5, transition: { type: 'spring', stiffness: 400, damping: 17 } }}
             >
-              <div className="w-14 h-14 mx-auto mb-6 flex items-center justify-center bg-deep-black/5 border border-light-grey group-hover:border-deep-black group-hover:bg-deep-black/10 transition-all duration-500">
+              <motion.div
+                whileHover={{ rotate: 5, scale: 1.1 }}
+                transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+                className="w-14 h-14 mx-auto mb-6 flex items-center justify-center bg-deep-black/5 border border-light-grey group-hover:border-deep-black group-hover:bg-deep-black/10 transition-all duration-500"
+              >
                 <reason.icon className="w-7 h-7 text-deep-black group-hover:text-charcoal transition-colors duration-300" aria-hidden="true" />
-              </div>
-              <h3 className="text-xl font-heading font-medium text-deep-black mb-3 group-hover:text-charcoal transition-colors">
+              </motion.div>
+              <motion.h3
+                whileHover={{ x: 4 }}
+                transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+                className="text-xl font-heading font-medium text-deep-black mb-3 group-hover:text-charcoal transition-colors"
+              >
                 {reason.title}
-              </h3>
+              </motion.h3>
               <p className="text-medium-grey leading-relaxed">
                 {reason.description}
               </p>

@@ -55,6 +55,7 @@ export function CategorySections() {
               viewport={{ once: true, margin: '-100px' }}
               transition={{ duration: 0.7, delay: index * 0.15, ease: [0.25, 0.46, 0.45, 0.94] }}
               className="card group overflow-hidden"
+              whileHover={{ y: -5, transition: { type: 'spring', stiffness: 400, damping: 17 } }}
             >
               <Link
                 href={category.href}
@@ -70,7 +71,12 @@ export function CategorySections() {
                   transition={{ type: 'spring', stiffness: 300, damping: 30 }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-deep-black/90 via-deep-black/30 to-transparent" />
-                <div className="absolute inset-0 bg-deep-black/10 group-hover:bg-deep-black/20 transition-colors duration-500" />
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.3 }}
+                  className="absolute inset-0 bg-deep-black/10 group-hover:bg-deep-black/20 transition-colors duration-500"
+                />
 
                 <div className="absolute inset-0 p-8 md:p-12 flex flex-col justify-end">
                   <motion.div
@@ -86,9 +92,13 @@ export function CategorySections() {
                       {category.id === 'construction' ? 'Development' : 'Residential'}
                     </motion.span>
 
-                    <h3 className="text-2xl md:text-3xl lg:text-4xl font-heading font-light text-pure-white mb-4">
+                    <motion.h3
+                      whileHover={{ x: 4 }}
+                      transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+                      className="text-2xl md:text-3xl lg:text-4xl font-heading font-light text-pure-white mb-4"
+                    >
                       {category.title}
-                    </h3>
+                    </motion.h3>
 
                     <p className="text-light-grey text-base md:text-lg max-w-xs mb-8 leading-relaxed">
                       {category.description}

@@ -76,6 +76,7 @@ export function FeaturedProperties() {
               viewport={{ once: true, margin: '-100px' }}
               transition={{ duration: 0.6, delay: index * 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
               className="card group"
+              whileHover={{ y: -5, transition: { type: 'spring', stiffness: 400, damping: 17 } }}
             >
               <Link
                 href={`/properties/${property.id}`}
@@ -94,13 +95,23 @@ export function FeaturedProperties() {
                     />
                   )}
                   {property.images.length > 1 && (
-                    <div className="absolute top-4 right-4">
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="absolute top-4 right-4"
+                    >
                       <span className="px-2 py-1 text-xs font-medium bg-pure-white/90 backdrop-blur text-deep-black rounded">
                         +{property.images.length - 1} more
                       </span>
-                    </div>
+                    </motion.div>
                   )}
-                  <div className="absolute top-4 left-4">
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="absolute top-4 left-4"
+                  >
                     <span className={cn(
                       'px-3 py-1 text-xs font-semibold uppercase tracking-wider',
                       property.purpose === 'buy'
@@ -109,7 +120,19 @@ export function FeaturedProperties() {
                     )}>
                       {purposeLabels[property.purpose]}
                     </span>
-                  </div>
+                  </motion.div>
+                  {property.is_featured && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.3, delay: 0.1 }}
+                      className="absolute top-4 left-20"
+                    >
+                      <span className="px-3 py-1 text-xs font-semibold uppercase tracking-wider bg-amber-500 text-pure-white">
+                        Featured
+                      </span>
+                    </motion.div>
+                  )}
                 </div>
 
                 <div className="p-6">
@@ -118,9 +141,13 @@ export function FeaturedProperties() {
                     <span className="truncate">{property.society}</span>
                   </div>
 
-                  <h3 className="text-xl font-heading font-medium text-deep-black mb-2 group-hover:text-charcoal transition-colors line-clamp-1">
+                  <motion.h3
+                    whileHover={{ x: 4 }}
+                    transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+                    className="text-xl font-heading font-medium text-deep-black mb-2 group-hover:text-charcoal transition-colors line-clamp-1"
+                  >
                     {property.title}
-                  </h3>
+                  </motion.h3>
 
                   <div className="flex items-center gap-4 text-sm text-medium-grey mb-4">
                     {property.bedrooms > 0 && (

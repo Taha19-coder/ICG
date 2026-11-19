@@ -60,6 +60,7 @@ export function OngoingProjects() {
               viewport={{ once: true, margin: '-100px' }}
               transition={{ duration: 0.7, delay: index * 0.15, ease: [0.25, 0.46, 0.45, 0.94] }}
               className="card group overflow-hidden h-full"
+              whileHover={{ y: -5, transition: { type: 'spring', stiffness: 400, damping: 17 } }}
             >
               <Link
                 href={`/projects/${project.id}`}
@@ -77,7 +78,12 @@ export function OngoingProjects() {
                       transition={{ type: 'spring', stiffness: 300, damping: 30 }}
                     />
                   )}
-                  <div className="absolute inset-0 bg-gradient-to-t from-deep-black/80 via-deep-black/20 to-transparent" />
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.3 }}
+                    className="absolute inset-0 bg-gradient-to-t from-deep-black/80 via-deep-black/20 to-transparent"
+                  />
                 </div>
 
                 <div className="flex flex-1 flex-col p-6">
@@ -85,9 +91,13 @@ export function OngoingProjects() {
                     <MapPin className="w-4 h-4" aria-hidden="true" />
                     <span className="truncate">{project.location}</span>
                   </div>
-                  <h3 className="text-xl font-heading font-medium text-deep-black mb-2 line-clamp-1 group-hover:text-charcoal transition-colors">
+                  <motion.h3
+                    whileHover={{ x: 4 }}
+                    transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+                    className="text-xl font-heading font-medium text-deep-black mb-2 line-clamp-1 group-hover:text-charcoal transition-colors"
+                  >
                     {project.title}
-                  </h3>
+                  </motion.h3>
                   <p className="text-medium-grey text-sm leading-relaxed mb-4 line-clamp-2">
                     {project.short_description}
                   </p>

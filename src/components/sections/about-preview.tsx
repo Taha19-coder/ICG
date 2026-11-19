@@ -95,11 +95,15 @@ export function AboutPreview() {
                   whileInView={{ opacity: 1, y: 0, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
+                  whileHover={{ y: -5, transition: { type: 'spring', stiffness: 400, damping: 17 } }}
                   className="card p-5 sm:p-6 bg-charcoal/50 border border-light-grey/20"
                 >
-                  <h3 className="text-lg font-heading font-medium mb-2 group-hover:text-charcoal transition-colors">
+                  <motion.h3
+                    whileHover={{ x: 4, transition: { type: 'spring', stiffness: 400, damping: 17 } }}
+                    className="text-lg font-heading font-medium mb-2 group-hover:text-charcoal transition-colors"
+                  >
                     {value.title}
-                  </h3>
+                  </motion.h3>
                   <p className="text-light-grey text-sm leading-relaxed">{value.description}</p>
                 </motion.div>
               ))}

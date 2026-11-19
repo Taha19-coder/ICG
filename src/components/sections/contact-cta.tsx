@@ -29,41 +29,83 @@ export function ContactCTA() {
             </p>
 
             <div className="space-y-6 mb-10">
-              <div className="card flex items-start gap-4 p-6">
-                <div className="w-12 h-12 flex items-center justify-center bg-deep-black/5 border border-light-grey flex-shrink-0">
+              <motion.div
+                whileHover={{ y: -5, scale: 1.02 }}
+                transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+                className="card flex items-start gap-4 p-6"
+              >
+                <motion.div
+                  whileHover={{ rotate: 5, scale: 1.1 }}
+                  transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+                  className="w-12 h-12 flex items-center justify-center bg-deep-black/5 border border-light-grey flex-shrink-0"
+                >
                   <Phone className="w-6 h-6 text-deep-black" aria-hidden="true" />
-                </div>
+                </motion.div>
                 <div>
-                  <h3 className="font-semibold text-deep-black mb-1">Call Us</h3>
+                  <motion.h3
+                    whileHover={{ x: 4 }}
+                    transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+                    className="font-semibold text-deep-black mb-1"
+                  >
+                    Call Us
+                  </motion.h3>
                   <a href={`tel:${siteConfig.phone}`} className="text-medium-grey hover:text-deep-black transition-colors">
                     {siteConfig.phone}
                   </a>
                 </div>
-              </div>
+              </motion.div>
 
-              <div className="card flex items-start gap-4 p-6">
-                <div className="w-12 h-12 flex items-center justify-center bg-deep-black/5 border border-light-grey flex-shrink-0">
+              <motion.div
+                whileHover={{ y: -5, scale: 1.02 }}
+                transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+                className="card flex items-start gap-4 p-6"
+              >
+                <motion.div
+                  whileHover={{ rotate: 5, scale: 1.1 }}
+                  transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+                  className="w-12 h-12 flex items-center justify-center bg-deep-black/5 border border-light-grey flex-shrink-0"
+                >
                   <Mail className="w-6 h-6 text-deep-black" aria-hidden="true" />
-                </div>
+                </motion.div>
                 <div>
-                  <h3 className="font-semibold text-deep-black mb-1">Email Us</h3>
+                  <motion.h3
+                    whileHover={{ x: 4 }}
+                    transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+                    className="font-semibold text-deep-black mb-1"
+                  >
+                    Email Us
+                  </motion.h3>
                   <a href={`mailto:${siteConfig.email}`} className="text-medium-grey hover:text-deep-black transition-colors">
                     {siteConfig.email}
                   </a>
                 </div>
-              </div>
+              </motion.div>
 
-              <div className="card flex items-start gap-4 p-6">
-                <div className="w-12 h-12 flex items-center justify-center bg-deep-black/5 border border-light-grey flex-shrink-0">
+              <motion.div
+                whileHover={{ y: -5, scale: 1.02 }}
+                transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+                className="card flex items-start gap-4 p-6"
+              >
+                <motion.div
+                  whileHover={{ rotate: 5, scale: 1.1 }}
+                  transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+                  className="w-12 h-12 flex items-center justify-center bg-deep-black/5 border border-light-grey flex-shrink-0"
+                >
                   <MapPin className="w-6 h-6 text-deep-black" aria-hidden="true" />
-                </div>
+                </motion.div>
                 <div>
-                  <h3 className="font-semibold text-deep-black mb-1">Visit Our Office</h3>
+                  <motion.h3
+                    whileHover={{ x: 4 }}
+                    transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+                    className="font-semibold text-deep-black mb-1"
+                  >
+                    Visit Our Office
+                  </motion.h3>
                   <address className="text-medium-grey not-italic leading-relaxed">
                     {siteConfig.address}
                   </address>
                 </div>
-              </div>
+              </motion.div>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">

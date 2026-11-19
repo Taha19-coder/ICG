@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { ArrowRight, Building2 } from 'lucide-react';
 import { useSiteSettings } from '@/hooks/use-site-settings';
 
 const heroImages = [
@@ -18,11 +19,10 @@ export function HeroSection() {
         <motion.img
           src={heroImages[0]}
           alt="Modern luxury villa architecture in Lahore"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover animate-kenburns"
           initial={{ scale: 1.1 }}
           animate={{ scale: 1 }}
           transition={{ duration: 20, ease: 'linear' }}
-          style={{ animation: 'kenburns 20s ease-in-out infinite alternate' }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-deep-black/85 via-deep-black/45 to-transparent" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_0%,_rgba(10,11,13,0.7)_100%)]" />
@@ -64,6 +64,49 @@ export function HeroSection() {
           >
             Discover exceptional properties and development opportunities with Investment and Construction Group.
           </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center mt-12"
+          >
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+              className="btn-primary flex items-center gap-2"
+            >
+              Explore Properties
+              <ArrowRight className="w-5 h-5" aria-hidden="true" />
+            </motion.button>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+              className="btn-secondary flex items-center gap-2"
+            >
+              View Projects
+              <Building2 className="w-5 h-5" aria-hidden="true" />
+            </motion.button>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 1.2 }}
+            className="mt-16 flex items-center justify-center gap-6 animate-pulse"
+          >
+            <div className="w-12 h-12 rounded-full bg-deep-black/10 flex items-center justify-center border border-pure-white/10">
+              <span className="text-pure-white font-semibold">15+</span>
+            </div>
+            <div className="w-12 h-12 rounded-full bg-deep-black/10 flex items-center justify-center border border-pure-white/10">
+              <span className="text-pure-white font-semibold">200+</span>
+            </div>
+            <div className="w-12 h-12 rounded-full bg-deep-black/10 flex items-center justify-center border border-pure-white/10">
+              <span className="text-pure-white font-semibold">50+</span>
+            </div>
+          </motion.div>
 
         </motion.div>
       </div>
