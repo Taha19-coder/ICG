@@ -100,7 +100,7 @@ export function CategorySections() {
                       {category.title}
                     </motion.h3>
 
-                    <p className="text-light-grey text-base md:text-lg max-w-xs mb-8 leading-relaxed min-h-[4.5rem] md:min-h-[5.5rem]">
+                    <p className="text-light-grey text-base md:text-lg max-w-xs mb-8 leading-relaxed md:min-h-[5.5rem]">
                       {category.description}
                     </p>
 
