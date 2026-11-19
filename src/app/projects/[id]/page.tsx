@@ -99,32 +99,32 @@ export default function ProjectDetailPage() {
             />
           )}
           <div className="absolute inset-0 bg-gradient-to-t from-deep-black/80 via-deep-black/20 to-transparent" />
-          <div className="absolute bottom-0 left-0 right-0 p-4 md:p-8 container-custom">
-            <div className="max-w-full sm:max-w-4xl">
-              <div className="flex items-center gap-3 mb-4">
+          <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 md:p-8 container-custom min-h-[35vh] sm:min-h-[25vh] flex flex-col justify-end">
+            <div className="max-w-full sm:max-w-4xl overflow-hidden">
+              <div className="flex items-center gap-2 mb-3 sm:mb-4">
                 <span className={cn(
-                  'inline-flex items-center gap-1 px-4 py-1.5 text-sm font-semibold uppercase tracking-wider',
+                  'inline-flex items-center gap-1 px-3 py-1 text-xs sm:text-sm font-semibold uppercase tracking-wider',
                   statusColors[project.status]
                 )}>
                   {projectStatusLabels[project.status]}
                 </span>
                 {project.progress_percentage > 0 && project.status === 'ongoing' && (
-                  <span className="px-4 py-1.5 text-sm font-medium bg-pure-white/10 backdrop-blur border border-pure-white/20 text-pure-white">
+                  <span className="px-3 py-1 text-xs sm:text-sm font-medium bg-pure-white/10 backdrop-blur border border-pure-white/20 text-pure-white">
                     {project.progress_percentage}% Complete
                   </span>
                 )}
               </div>
-              <h1 id="project-title" className="text-4xl md:text-5xl lg:text-6xl font-heading font-light tracking-tight text-pure-white mb-4">
+              <h1 id="project-title" className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-light tracking-tight text-pure-white mb-3 sm:mb-4 leading-tight overflow-wrap break-word">
                 {project.title}
               </h1>
-              <div className="flex flex-wrap items-center gap-6 text-light-grey">
-                <span className="flex items-center gap-2">
-                  <MapPinIcon className="w-5 h-5" aria-hidden="true" />
+              <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-light-grey text-sm sm:text-base">
+                <span className="flex items-center gap-1 sm:gap-2">
+                  <MapPinIcon className="w-4 sm:w-5 h-4 sm:h-5" aria-hidden="true" />
                   {project.location}
                 </span>
                 {project.expected_completion_date && (
-                  <span className="flex items-center gap-2">
-                    <Calendar className="w-5 h-5" aria-hidden="true" />
+                  <span className="flex items-center gap-1 sm:gap-2">
+                    <Calendar className="w-4 sm:w-5 h-4 sm:h-5" aria-hidden="true" />
                     Est. Completion: {formatDate(project.expected_completion_date)}
                   </span>
                 )}
@@ -134,10 +134,10 @@ export default function ProjectDetailPage() {
         </div>
       </section>
 
-      <section className="py-12 bg-off-white">
+      <section className="py-10 sm:py-12 bg-off-white">
         <div className="container-custom">
-          <div className="grid lg:grid-cols-3 gap-8 lg:gap-12">
-            <div className="lg:col-span-2 space-y-10">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 lg:gap-12">
+            <div className="lg:col-span-2 space-y-8 sm:space-y-10">
               <div>
                 <h2 className="text-2xl md:text-3xl font-heading font-light tracking-tight text-deep-black mb-6">Project Overview</h2>
                 <div className="prose prose-deep-black max-w-none text-medium-grey leading-relaxed">

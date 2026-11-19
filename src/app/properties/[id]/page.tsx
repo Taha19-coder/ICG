@@ -107,10 +107,10 @@ export default function PropertyDetailPage() {
         </div>
       </nav>
 
-      <section className="py-8" aria-labelledby="property-title">
+      <section className="py-8 sm:py-12" aria-labelledby="property-title">
         <div className="container-custom">
-          <div className="grid lg:grid-cols-3 gap-8 lg:gap-12">
-            <div className="lg:col-span-2 space-y-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 lg:gap-12">
+            <div className="lg:col-span-2 space-y-6 sm:space-y-8">
               <div className="relative">
                 <div className="relative aspect-[16/9] rounded-none overflow-hidden bg-light-grey">
                   {property.images[currentImageIndex]?.url && (
@@ -252,7 +252,7 @@ export default function PropertyDetailPage() {
               <div className="grid md:grid-cols-2 gap-8 pt-8 border-t border-light-grey">
                 <div>
                   <h2 className="text-xl font-heading font-medium text-deep-black mb-4">Description</h2>
-                  <p className="text-medium-grey leading-relaxed whitespace-pre-line">{property.description}</p>
+                  <p className="text-medium-grey leading-relaxed whitespace-pre-line overflow-wrap break-word">{property.description}</p>
                 </div>
 
                 <div>
