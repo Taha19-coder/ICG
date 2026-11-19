@@ -45,6 +45,7 @@ export default function PropertyDetailPage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
+  const [isFavorite, setIsFavorite] = useState(false);
 
   if (isLoading || error) {
     return (
@@ -78,6 +79,27 @@ export default function PropertyDetailPage() {
 
   const handleWhatsAppClick = () => {
     window.open(`https://wa.me/${siteConfig.whatsapp_business_number.replace(/\D/g, '')}?text=${whatsappMessage}`, '_blank');
+  };
+
+  const handleShare = async () => {
+    const shareData = {
+      title: property.title,
+      text: `${property.title} - ${formatPrice(property.price)} at ${property.location}`,
+      url: `${typeof window !== 'undefined' ? window.location.origin : ''}/properties/${property.id}`,
+    };
+    try {
+      if (typeof navigator !== 'undefined' && navigator.share) {
+        await navigator.share(shareData);
+      } else {
+        await navigator.clipboard.writeText(shareData.url);
+      }
+    } catch (error) {
+      console.error('Error sharing:', error);
+    }
+  };
+
+  const handleFavorite = () => {
+    setIsFavorite(!isFavorite);
   };
 
   return (
@@ -187,11 +209,21 @@ export default function PropertyDetailPage() {
                     </div>
                   </div>
                   <div className="flex items-center gap-2">
-                    <button className="p-3 bg-pure-white border border-light-grey hover:border-deep-black hover:text-deep-black transition-colors" aria-label="Share property">
+                    <button
+                      onClick={handleShare}
+                      className="p-3 bg-pure-white border border-light-grey hover:border-deep-black hover:text-deep-black transition-colors"
+                      aria-label="Share property"
+                    >
                       <Share2 className="w-5 h-5" />
                     </button>
-                    <button className="p-3 bg-pure-white border border-light-grey hover:border-deep-black hover:text-deep-black transition-colors" aria-label="Save property">
-                      <Heart className="w-5 h-5" />
+                    <button
+                      onClick={handleFavorite}
+                      className={`p-3 transition-colors duration-200 ${isFavorite
+                        ? 'bg-amber-500 border-amber-500 text-pure-white'
+                        : 'bg-pure-white border border-light-grey hover:border-deep-black hover:text-deep-black'}`}
+                      aria-label={isFavorite ? 'Remove from favorites' : 'Save property'}
+                    >
+                      <Heart className={`w-5 h-5 ${isFavorite ? 'fill-current' : ''}`} />
                     </button>
                   </div>
                 </div>
