@@ -110,7 +110,7 @@ export function FeaturedProperties() {
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.3 }}
-                    className="absolute top-4 left-4"
+                    className="absolute top-4 left-4 flex flex-col gap-2"
                   >
                     <span className={cn(
                       'px-3 py-1 text-xs font-semibold uppercase tracking-wider',
@@ -120,19 +120,12 @@ export function FeaturedProperties() {
                     )}>
                       {purposeLabels[property.purpose]}
                     </span>
-                  </motion.div>
-                  {property.is_featured && (
-                    <motion.div
-                      initial={{ opacity: 0, y: -10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.3, delay: 0.1 }}
-                      className="absolute top-4 left-20"
-                    >
+                    {property.is_featured && (
                       <span className="px-3 py-1 text-xs font-semibold uppercase tracking-wider bg-amber-500 text-pure-white">
                         Featured
                       </span>
-                    </motion.div>
-                  )}
+                    )}
+                  </motion.div>
                 </div>
 
                 <div className="p-6">
