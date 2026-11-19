@@ -91,23 +91,6 @@ export function HeroSection() {
             </motion.button>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 1.2 }}
-            className="mt-16 flex items-center justify-center gap-6 animate-pulse"
-          >
-            <div className="w-12 h-12 rounded-full bg-deep-black/10 flex items-center justify-center border border-pure-white/10">
-              <span className="text-pure-white font-semibold">15+</span>
-            </div>
-            <div className="w-12 h-12 rounded-full bg-deep-black/10 flex items-center justify-center border border-pure-white/10">
-              <span className="text-pure-white font-semibold">200+</span>
-            </div>
-            <div className="w-12 h-12 rounded-full bg-deep-black/10 flex items-center justify-center border border-pure-white/10">
-              <span className="text-pure-white font-semibold">50+</span>
-            </div>
-          </motion.div>
-
         </motion.div>
       </div>
     </section>
