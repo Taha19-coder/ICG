@@ -79,7 +79,7 @@ export default function AdminDashboardPage() {
           </Link>
           <Link href="/admin/projects" className="btn-primary">
             <Plus className="w-4 h-4 mr-2" aria-hidden="true" />
-            Add Project
+            Add Construction
           </Link>
         </div>
       </div>
