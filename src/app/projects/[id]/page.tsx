@@ -68,7 +68,7 @@ export default function ProjectDetailPage() {
 
   return (
     <div className="min-h-screen bg-pure-white">
-      <nav className="pt-12 sm:pt-28 pb-4 px-4 md:px-6 lg:px-8 bg-pure-white border-b border-light-grey mb-6" aria-label="Breadcrumb">
+      <nav className="pt-10 sm:pt-28 pb-3 px-3 sm:px-4 md:px-6 lg:px-8 bg-pure-white border-b border-light-grey mb-4 sm:mb-6" aria-label="Breadcrumb">
         <div className="container-custom">
           <ol className="flex items-center gap-2 text-sm text-medium-grey">
             <li>
@@ -83,7 +83,7 @@ export default function ProjectDetailPage() {
             </li>
             <li className="flex items-center gap-2">
               <span className="w-4 h-4" aria-hidden="true">/</span>
-              <span className="text-deep-black font-medium truncate max-w-[200px]" aria-current="page">{project.title}</span>
+              <span className="text-deep-black font-medium truncate max-w-xs sm:max-w-[200px]" aria-current="page">{project.title}</span>
             </li>
           </ol>
         </div>
@@ -99,33 +99,33 @@ export default function ProjectDetailPage() {
             />
           )}
           <div className="absolute inset-0 bg-gradient-to-t from-deep-black/80 via-deep-black/20 to-transparent" />
-          <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 md:p-8 container-custom min-h-[35vh] sm:min-h-[25vh] flex flex-col justify-end">
-            <div className="max-w-full sm:max-w-4xl overflow-hidden">
-              <div className="flex items-center gap-2 mb-3 sm:mb-4">
+          <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4 md:p-6 container-custom min-h-[30vh] sm:min-h-[25vh] flex flex-col justify-end">
+            <div className="max-w-full overflow-hidden">
+              <div className="flex items-center gap-1 sm:gap-2 mb-2 sm:mb-3">
                 <span className={cn(
-                  'inline-flex items-center gap-1 px-3 py-1 text-xs sm:text-sm font-semibold uppercase tracking-wider',
+                  'inline-flex items-center gap-1 px-2.5 sm:px-3 py-0.5 sm:py-1 text-[10px] sm:text-xs font-semibold uppercase tracking-wider',
                   statusColors[project.status]
                 )}>
                   {projectStatusLabels[project.status]}
                 </span>
                 {project.progress_percentage > 0 && project.status === 'ongoing' && (
-                  <span className="px-3 py-1 text-xs sm:text-sm font-medium bg-pure-white/10 backdrop-blur border border-pure-white/20 text-pure-white">
+                  <span className="px-2.5 sm:px-3 py-0.5 sm:py-1 text-[10px] sm:text-xs font-medium bg-pure-white/10 backdrop-blur border border-pure-white/20 text-pure-white">
                     {project.progress_percentage}% Complete
                   </span>
                 )}
               </div>
-              <h1 id="project-title" className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-light tracking-tight text-pure-white mb-3 sm:mb-4 leading-tight overflow-wrap break-word">
+              <h1 id="project-title" className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-light tracking-tight text-pure-white mb-2 sm:mb-3 leading-tight overflow-wrap break-word">
                 {project.title}
               </h1>
-              <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-light-grey text-sm sm:text-base">
-                <span className="flex items-center gap-1 sm:gap-2">
-                  <MapPinIcon className="w-4 sm:w-5 h-4 sm:h-5" aria-hidden="true" />
-                  {project.location}
+              <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-light-grey text-xs sm:text-sm">
+                <span className="flex items-center gap-0.5 sm:gap-1">
+                  <MapPinIcon className="w-3 sm:w-4 h-3 sm:h-4" aria-hidden="true" />
+                  <span className="overflow-wrap break-word">{project.location}</span>
                 </span>
                 {project.expected_completion_date && (
-                  <span className="flex items-center gap-1 sm:gap-2">
-                    <Calendar className="w-4 sm:w-5 h-4 sm:h-5" aria-hidden="true" />
-                    Est. Completion: {formatDate(project.expected_completion_date)}
+                  <span className="flex items-center gap-0.5 sm:gap-1">
+                    <Calendar className="w-3 sm:w-4 h-3 sm:h-4" aria-hidden="true" />
+                    <span className="overflow-wrap break-word">Est. Completion: {formatDate(project.expected_completion_date)}</span>
                   </span>
                 )}
               </div>
@@ -134,33 +134,33 @@ export default function ProjectDetailPage() {
         </div>
       </section>
 
-      <section className="py-10 sm:py-12 bg-off-white">
+      <section className="py-8 sm:py-10 lg:py-12 bg-off-white">
         <div className="container-custom">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 lg:gap-12">
-            <div className="lg:col-span-2 space-y-8 sm:space-y-10">
+          <div className="grid sm:grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-3 lg:gap-8 lg:gap-12">
+            <div className="lg:col-span-2 space-y-6 sm:space-y-8">
               <div>
-                <h2 className="text-2xl md:text-3xl font-heading font-light tracking-tight text-deep-black mb-6">Project Overview</h2>
-                <div className="prose prose-deep-black max-w-none text-medium-grey leading-relaxed">
+                <h2 className="text-lg sm:text-xl md:text-2xl font-heading font-light tracking-tight text-deep-black mb-2 sm:mb-4">Project Overview</h2>
+                <div className="prose prose-deep-black max-w-none text-medium-grey leading-relaxed overflow-wrap break-word">
                   <p>{project.description}</p>
                 </div>
               </div>
 
-              <div className="pt-8 border-t border-light-grey">
-                <h2 className="text-2xl md:text-3xl font-heading font-light tracking-tight text-deep-black mb-6">Key Features</h2>
-                <ul className="grid sm:grid-cols-2 gap-4" role="list">
+              <div className="pt-6 sm:pt-8 border-t border-light-grey">
+                <h2 className="text-lg sm:text-xl md:text-2xl font-heading font-light tracking-tight text-deep-black mb-2 sm:mb-4">Key Features</h2>
+                <ul className="grid sm:grid-cols-2 gap-3 sm:gap-4" role="list">
                   {project.key_features.map((feature, index) => (
-                    <li key={index} className="flex items-start gap-3 p-4 bg-pure-white border border-light-grey">
-                      <CheckCircle className="w-6 h-6 text-deep-black flex-shrink-0 mt-0.5" aria-hidden="true" />
-                      <span className="text-medium-grey">{feature}</span>
+                    <li key={index} className="flex items-start gap-2 sm:gap-3 p-3 sm:p-4 bg-pure-white border border-light-grey">
+                      <CheckCircle className="w-5 sm:w-6 h-5 sm:h-6 text-deep-black flex-shrink-0 mt-0.5" aria-hidden="true" />
+                      <span className="text-medium-grey text-sm overflow-wrap break-word">{feature}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
               {project.images.length > 1 && (
-                <div className="pt-8 border-t border-light-grey">
-                  <h2 className="text-2xl md:text-3xl font-heading font-light tracking-tight text-deep-black mb-6">Architectural Gallery</h2>
-                  <div className="grid md:grid-cols-2 gap-4">
+                <div className="pt-6 sm:pt-8 border-t border-light-grey">
+                  <h2 className="text-lg sm:text-xl md:text-2xl font-heading font-light tracking-tight text-deep-black mb-2 sm:mb-4">Architectural Gallery</h2>
+                  <div className="grid sm:grid-cols-2 gap-4">
                     {project.images.map((image, index) => (
                       <button
                         key={image.id}
@@ -174,7 +174,7 @@ export default function ProjectDetailPage() {
                           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                         />
                         <div className="absolute inset-0 bg-deep-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                          <Expand className="w-8 h-8 text-pure-white" />
+                          <Expand className="w-7 sm:w-8 h-7 sm:h-8 text-pure-white" />
                         </div>
                       </button>
                     ))}
