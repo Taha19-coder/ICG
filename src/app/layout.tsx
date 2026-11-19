@@ -75,7 +75,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" data-scroll-behavior="smooth" className={`${manrope.variable} font-sans`} suppressHydrationWarning>
+    <html lang="en" data-scroll-behavior="smooth" className={`${manrope.variable} font-sans overflow-x-hidden`} suppressHydrationWarning>
       <head>
         <Script id="icg-theme-init" strategy="beforeInteractive">
           {`try { if (localStorage.getItem('icg-theme') === 'dark') document.documentElement.classList.add('dark'); } catch (error) { console.error('Unable to read the saved theme preference.', error); }`}

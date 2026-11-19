@@ -68,7 +68,7 @@ export default function ProjectDetailPage() {
 
   return (
     <div className="min-h-screen bg-pure-white">
-      <nav className="pt-28 pb-6 px-4 md:px-6 lg:px-8 bg-pure-white border-b border-light-grey" aria-label="Breadcrumb">
+      <nav className="pt-20 sm:pt-28 pb-6 px-4 md:px-6 lg:px-8 bg-pure-white border-b border-light-grey mb-8" aria-label="Breadcrumb">
         <div className="container-custom">
           <ol className="flex items-center gap-2 text-sm text-medium-grey">
             <li>
@@ -83,7 +83,7 @@ export default function ProjectDetailPage() {
             </li>
             <li className="flex items-center gap-2">
               <span className="w-4 h-4" aria-hidden="true">/</span>
-              <span className="text-deep-black font-medium truncate max-w-xs" aria-current="page">{project.title}</span>
+              <span className="text-deep-black font-medium truncate max-w-[200px]" aria-current="page">{project.title}</span>
             </li>
           </ol>
         </div>

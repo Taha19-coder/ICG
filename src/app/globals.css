@@ -473,4 +473,13 @@
   .icon-pulse {
     animation: var(--animate-pulse-slow);
   }
+
+  /* Hide scrollbars globally */
+  * {
+    scrollbar-width: none;
+  }
+
+  *::-webkit-scrollbar {
+    display: none;
+  }
 }
