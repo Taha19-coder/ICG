@@ -82,7 +82,7 @@ export default function PropertyDetailPage() {
 
   return (
     <div className="min-h-screen bg-pure-white">
-      <nav className="pt-20 sm:pt-28 pb-6 px-4 md:px-6 lg:px-8 bg-pure-white border-b border-light-grey mb-8" aria-label="Breadcrumb">
+      <nav className="pt-12 sm:pt-28 pb-4 px-4 md:px-6 lg:px-8 bg-pure-white border-b border-light-grey mb-6" aria-label="Breadcrumb">
         <div className="container-custom">
           <ol className="flex items-center gap-2 text-sm text-medium-grey">
             <li>

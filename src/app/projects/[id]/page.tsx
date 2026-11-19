@@ -68,7 +68,7 @@ export default function ProjectDetailPage() {
 
   return (
     <div className="min-h-screen bg-pure-white">
-      <nav className="pt-20 sm:pt-28 pb-6 px-4 md:px-6 lg:px-8 bg-pure-white border-b border-light-grey mb-8" aria-label="Breadcrumb">
+      <nav className="pt-12 sm:pt-28 pb-4 px-4 md:px-6 lg:px-8 bg-pure-white border-b border-light-grey mb-6" aria-label="Breadcrumb">
         <div className="container-custom">
           <ol className="flex items-center gap-2 text-sm text-medium-grey">
             <li>
@@ -99,8 +99,8 @@ export default function ProjectDetailPage() {
             />
           )}
           <div className="absolute inset-0 bg-gradient-to-t from-deep-black/80 via-deep-black/20 to-transparent" />
-          <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12 container-custom">
-            <div className="max-w-4xl">
+          <div className="absolute bottom-0 left-0 right-0 p-4 md:p-8 container-custom">
+            <div className="max-w-full sm:max-w-4xl">
               <div className="flex items-center gap-3 mb-4">
                 <span className={cn(
                   'inline-flex items-center gap-1 px-4 py-1.5 text-sm font-semibold uppercase tracking-wider',
